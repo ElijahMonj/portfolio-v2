@@ -3,7 +3,7 @@ import me from '@/public/images/me.jpg'
 import Link from "next/link";
 import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
 
-const Card = () => {
+const CardFreelance = () => {
     return ( 
         <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
             {/* Image Section */}
@@ -39,4 +39,4 @@ const Card = () => {
     );
 }
 
-export default Card;
+export default CardFreelance

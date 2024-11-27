@@ -1,13 +1,14 @@
 import React from 'react';
 import { FaReact, FaNodeJs, } from 'react-icons/fa';
 import { FaBriefcase, FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaComments, FaBootstrap, FaGithub, FaJava, FaMicrosoft, FaArrowUpRightFromSquare, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
-import Card from './Card';
+import CardCapstone from './CardCapstone';
 import Link from 'next/link';
 import { SiCsharp, SiExpress, SiFirebase, SiMongodb, SiNextdotjs, SiPrisma, SiTailwindcss, SiVercel, SiVisualstudiocode } from 'react-icons/si';
 import { BiLogoJavascript, BiLogoPostgresql, BiLogoTypescript } from 'react-icons/bi';
 import Me from '@/public/images/me.jpg'
 import Image from 'next/image';
 import { MdDownload } from 'react-icons/md';
+import CardFreelance from './CardFreelance';
 const Resume = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 text-dark">
@@ -257,8 +258,8 @@ const Resume = () => {
         
         {/* Featured Projects */}
         <div className="grid gap-6 md:grid-cols-2">
-        <Card/>
-        <Card/>
+        <CardCapstone/>
+        <CardFreelance/>
         </div>
         <p className="text-dark my-6">
           For more projects, visit my <Link href="/projects" className="text-blue-500 underline">Projects page</Link>.

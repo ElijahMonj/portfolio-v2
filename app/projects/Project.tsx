@@ -7,7 +7,7 @@ interface ProjectProps {
     description: string;
     technologies: string[];
     image: StaticImageData;
-    github: string;
+    github?: string;
     link: string;
     label: string; // Added for project category
 }
@@ -50,12 +50,12 @@ const Project: React.FC<ProjectProps> = ({ title, description, technologies, ima
                 >
                     View <FaArrowUpRightFromSquare className="my-auto" />
                 </Link>
-                <Link
+                {github && <Link
                     href={github}
                     className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
                 >
                     GitHub <FaGithubAlt className="my-auto" size={18} />
-                </Link>
+                </Link>}
             </div>
         </div>
     );
