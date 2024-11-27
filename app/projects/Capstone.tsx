@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import testimage from '/Downloads/7k.jpg'
+import me from '@/public/images/me.jpg'
 import Link from "next/link";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 const Capstone = () => {
@@ -8,7 +8,7 @@ const Capstone = () => {
     return (
         <div className="w-full lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
             {/* Project Image */}
-            <Image src={testimage} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
+            <Image src={me} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
 
             {/* Project Details */}
             <div className="p-3 w-full flex flex-col justify-between">

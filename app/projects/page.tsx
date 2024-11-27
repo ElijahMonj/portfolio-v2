@@ -1,10 +1,10 @@
 
-import React, { useState } from 'react';
-import testimage from '/Downloads/7k.jpg'
+import React from 'react';
+
 import teksto from '@/public/images/projects/teksto.png'
 import delightNailSpa from '@/public/images/projects/delightNailSpa.png'
 import Project from './Project';
-import Card from '../resume/Card';
+
 import neopal from '@/public/images/projects/neopal.png'
 import Capstone from './Capstone';
 const Projects = () => {

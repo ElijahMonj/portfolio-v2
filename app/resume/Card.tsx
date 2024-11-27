@@ -1,5 +1,5 @@
 import Image from "next/image";
-import testimage from '/Downloads/7k.jpg'
+import me from '@/public/images/me.jpg'
 import Link from "next/link";
 import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
 
@@ -8,7 +8,7 @@ const Card = () => {
         <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
             {/* Image Section */}
             <div className="rounded-t-lg overflow-hidden">
-                <Image src={testimage} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
+                <Image src={me} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
             </div>
             
             {/* Tags */}

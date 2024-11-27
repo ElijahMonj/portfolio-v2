@@ -1,5 +1,5 @@
 import Image from "next/image";
-import testimage from "/Downloads/7k.jpg";
+
 import Me from "@/public/images/me.jpg";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ const Page = () => {
       <div className="text-center px-5">
         <h1 className="text-5xl font-bold mb-4">TricyCall: A Tricycle Hailing App</h1>
         <Image
-          src={testimage}
+          src={Me}
           alt="project image"
           className="rounded-lg mx-auto mt-6"
         />
