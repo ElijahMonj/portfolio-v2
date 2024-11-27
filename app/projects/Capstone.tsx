@@ -1,33 +1,26 @@
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import testimage from '/Downloads/7k.jpg'
 import Link from "next/link";
-import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
-interface ProjectProps {
-    title: string;
-    description: string;
-    technologies: string[];
-    image: StaticImageData;
-    github: string;
-    link: string;
-    label: string; // Added for project category
-}
-
-const Project: React.FC<ProjectProps> = ({ title, description, technologies, image, github, link, label }) => {
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+const Capstone = () => {
+    const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io"];
     return (
         <div className="w-full lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
             {/* Project Image */}
-            <Image src={image} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
+            <Image src={testimage} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
 
             {/* Project Details */}
             <div className="p-3 w-full flex flex-col justify-between">
-                {/* Project Label */}
-                <span className="text-xs font-semibold text-dark uppercase tracking-wide">{label}</span>
-
                 {/* Project Title */}
-                <div className="text-2xl font-bold">{title}</div>
-
+                <span className="text-xs font-semibold text-dark uppercase tracking-wide">IT Capstone Project</span>
+                <div className="text-2xl font-bold">TricyCall</div>
+                
                 {/* Project Description */}
-                <div className="text-gray-700">{description}</div>
+                <div className="text-gray-700">A cloud-based multi-platform tricycle
+                    hailing system with notifications, emergency
+                    assistance, and GPS tracking for tower toda.
+                </div>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap mt-2">
@@ -43,22 +36,23 @@ const Project: React.FC<ProjectProps> = ({ title, description, technologies, ima
             </div>
 
             {/* Links */}
-            <div className="flex flex-col justify-center gap-5">
+            <div className="flex flex-col justify-center gap-5 flex-shrink-0">
                 <Link
-                    href={link}
+                    href={'https://tricycall.online/'}
+                    target="_blank" rel="noopener noreferrer"
                     className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
                 >
-                    View <FaArrowUpRightFromSquare className="my-auto" />
+                    View Website<FaArrowUpRightFromSquare className="my-auto" />
                 </Link>
                 <Link
-                    href={github}
+                    href={'/'}
                     className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
                 >
-                    GitHub <FaGithubAlt className="my-auto" size={18} />
+                    View Case Study <FaArrowUpRightFromSquare className="my-auto" size={18} />
                 </Link>
             </div>
         </div>
     );
 };
 
-export default Project;
+export default Capstone;
