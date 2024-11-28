@@ -14,7 +14,7 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ title, description, technologies, image, github, link, label }) => {
     return (
-        <div className="w-full lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div className="w-full lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 animateUp">
             {/* Project Image */}
             <Image src={image} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
 

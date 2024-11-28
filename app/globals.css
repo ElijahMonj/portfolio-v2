@@ -17,3 +17,18 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes animateUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animateUp {
+  animation: animateUp 1s ease-out forwards; /* Duration: 1s, easing: ease-out */
+}

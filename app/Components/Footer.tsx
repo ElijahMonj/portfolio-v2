@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FaLinkedin, FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
+import { FaEnvelopeSquare } from "react-icons/fa";
+import {  FaLinkedin, FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 const Footer = () => {
     return ( 
@@ -7,11 +8,23 @@ const Footer = () => {
             <div className="h-auto flex justify-between lg:flex-row md:flex-row flex-col">
                 <div className="flex flex-col gap-2">
                 <div className="text-4xl lg:text-left md:text-left text-center">Get in Touch</div>
-                <div className="lg:text-left md:text-left text-center">Connect with me in the following platforms</div>
+                <div className="lg:text-left md:text-left text-center">Lets build something amazing together!</div>
                 <div className="flex gap-3 lg:justify-start md:justify-start justify-center">
-                    <Link href={''}><FaSquareFacebook size={32} className="hover:fill-darkgray transition duration-500 ease-out" /></Link>
-                    <Link href={''}><FaSquareGithub size={32} className="hover:fill-darkgray transition duration-500 ease-out" /></Link>
-                    <Link href={''}><FaLinkedin size={32} className="hover:fill-darkgray transition duration-500 ease-out" /></Link>
+                    <Link target="_blank"
+                        rel="noopener noreferrer" href={'https://www.facebook.com/deleon111/'}>
+                        <FaSquareFacebook size={32} className="hover:fill-darkgray transition duration-500 ease-out" />
+                    </Link>
+                    <Link target="_blank"
+                        rel="noopener noreferrer" href={'https://github.com/ElijahMonj'}>
+                        <FaSquareGithub size={32} className="hover:fill-darkgray transition duration-500 ease-out" />
+                    </Link>
+                    <Link target="_blank"
+                        rel="noopener noreferrer"href={'https://www.linkedin.com/in/elijah-monjardin-1697a1168/'}>
+                        <FaLinkedin size={32} className="hover:fill-darkgray transition duration-500 ease-out" />
+                    </Link>
+                    <Link href="mailto:monjardinelijah120@gmail.com">
+                        <FaEnvelopeSquare size={32} className="hover:fill-darkgray transition duration-500 ease-out" />
+                    </Link>
                 </div>
                 </div>
                 <div className="gap-4 bg-white justify-center items-center flex flex-col">

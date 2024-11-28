@@ -68,7 +68,7 @@ const Page = () => {
         <h2 className="text-3xl font-semibold mb-4">Overview</h2>
         <p className="text-dark">
           Development a cloud-based multi-platform tricycle hailing system
-            with chat, emergency assistance, and GPS tracking for
+            with real-time chat, emergency assistance, and GPS tracking for
             Tower Toda. The project aimed to address the challenges faced by
             commuters in Tower Toda, a barangay in the Philippines, by providing
             a convenient and reliable mode of transportation.

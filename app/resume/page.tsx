@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaReact, FaNodeJs, } from 'react-icons/fa';
-import { FaBriefcase, FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaComments, FaBootstrap, FaGithub, FaJava, FaMicrosoft, FaArrowUpRightFromSquare, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
+import { FaReact, FaNodeJs, FaShieldAlt, FaTools, FaHeartbeat, FaAdjust, FaSyncAlt, FaSearch, } from 'react-icons/fa';
+import { FaBriefcase, FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaComments, FaBootstrap, FaGithub, FaJava, FaMicrosoft, FaArrowUpRightFromSquare, FaLinkedin, FaEnvelope, FaClock, FaHeart, FaToolbox } from 'react-icons/fa6';
 import CardCapstone from './CardCapstone';
 import Link from 'next/link';
 import { SiCsharp, SiExpress, SiFirebase, SiMongodb, SiNextdotjs, SiPrisma, SiTailwindcss, SiVercel, SiVisualstudiocode } from 'react-icons/si';
@@ -11,7 +11,7 @@ import { MdDownload } from 'react-icons/md';
 import CardFreelance from './CardFreelance';
 const Resume = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6 text-dark">
+    <div className="max-w-4xl mx-auto p-6 text-dark animateUp">
       {/* Header Section */}
       <header className="mb-10 flex flex-col items-center lg:flex-row lg:items-start lg:gap-8">
         {/* Left Column - Image */}
@@ -47,7 +47,7 @@ const Resume = () => {
                <FaLinkedin className="my-auto" />LinkedIn
             </Link>
             <Link 
-              href="mailto:john.doe@example.com" 
+              href="mailto:monjardinelijah120@gmail.com" 
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
                <FaEnvelope className="my-auto" />Email
@@ -265,17 +265,48 @@ const Resume = () => {
           For more projects, visit my <Link href="/projects" className="text-blue-500 underline">Projects page</Link>.
         </p>
       </section>
-
-
+      
       {/* Soft Skills Section */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-6">Soft Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { Icon: FaComments, color: 'text-green-500', label: 'Communication', description: 'Able to effectively communicate technical concepts to non-technical team members.' },
-            { Icon: FaLightbulb, color: 'text-yellow-500', label: 'Problem-solving', description: 'Skilled in analyzing and solving complex issues under pressure.' },
-            { Icon: FaUsers, color: 'text-blue-500', label: 'Teamwork', description: 'Collaborative team player with experience working in cross-functional teams.' },
-            { Icon: FaLightbulb, color: 'text-red-500', label: 'Adaptability', description: 'Comfortable adapting to new challenges and environments.' },
+            {
+              Icon: FaLightbulb,
+              color: 'text-yellow-500',
+              label: 'Critical thinking',
+              description: "Identified inefficiencies in the manual process of expiring unattended appointments and implemented an automated solution using cron jobs to reduce manual effort.",
+            },
+            {
+              Icon: FaSyncAlt,
+              color: 'text-blue-500',
+              label: 'Adaptability',
+              description: "Adapted to changes in tools by learning and using Firebase to speed up development and meet the client's deadline. Transitioned from developer to researcher during the capstone thesis.",
+            },
+            {
+              Icon: FaUsers,
+              color: 'text-green-500',
+              label: 'Team Collaboration & Communication',
+              description: 'Led the capstone documentation and research, and ensured alignment between study objectives and the developed system through clear communication with the co-developer.',
+            },
+            {
+              Icon: FaSearch,
+              color: 'text-pink-500',
+              label: 'Research',
+              description: 'Conducted client interviews and tricycle driver surveys to identify core problems and user needs, forming the foundation of solution.',
+            },
+            {
+              Icon: FaClock,
+              color: 'text-purple-500',
+              label: 'Effective Time & Stress Management',
+              description: 'Divided research and documentation tasks into manageable steps for our capstone project, reducing team stress and meeting deadline.',
+            },
+            {
+              Icon: FaToolbox,
+              color: 'text-orange-500',
+              label: 'Resourcefulness',
+              description: 'Utilized design ideas from Dribbble and existing technologies, such as react-native-gifted-chat, to accelerate development processes and meet tight deadlines.',
+            },
           ].map(({ Icon, color, label, description }, index) => (
             <div key={index} className="bg-white p-4 rounded-lg flex gap-4 hover:shadow-lg transition duration-300 ease-out">
               <div>
@@ -289,6 +320,8 @@ const Resume = () => {
           ))}
         </div>
       </section>
+
+
 
       {/* Downloadable Resume */}
       <section className="text-center mt-12">

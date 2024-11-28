@@ -6,7 +6,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 const Capstone = () => {
     const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io"];
     return (
-        <div className="w-full lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div className="w-full animateUp lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
             {/* Project Image */}
             <Image src={me} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
 
@@ -45,7 +45,7 @@ const Capstone = () => {
                     View Website<FaArrowUpRightFromSquare className="my-auto" />
                 </Link>
                 <Link
-                    href={'/'}
+                    href={'/projects/capstone'}
                     className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
                 >
                     View Case Study <FaArrowUpRightFromSquare className="my-auto" size={18} />
