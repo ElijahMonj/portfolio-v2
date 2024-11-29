@@ -1,17 +1,20 @@
 import Image from "next/image";
-import me from '@/public/images/me.jpg'
+import capstone from '@/public/images/projects/capstone/2.jpg'
 import Link from "next/link";
 import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
 
 const CardCapstone = () => {
-    const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io"];
+    const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io","Semaphore"];
     return ( 
         <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            {/* Image Section */}
-            <div className="rounded-t-lg overflow-hidden">
-                <Image src={me} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
-            </div>
-            
+    
+        <div className="relative rounded-t-lg overflow-hidden">
+            <Image src={capstone} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
+            <span className="absolute top-3 select-none left-3 bg-dark text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+                Capstone Project
+            </span>
+        </div>
+
             {/* Tags */}
             <div className="flex flex-wrap p-4">
                 {technologies.map((tech) => (
@@ -27,7 +30,7 @@ const CardCapstone = () => {
             {/* Title and Description */}
             <div className="px-5">
                 <h3 className="text-xl font-bold mb-2">TricyCall: Tricycle Hailing App</h3>
-                <p className="text-gray-600 mb-4"> A tricycle hailing app for both drivers and passengers for Tower TODA.</p>
+                <p className="text-gray-600 mb-4"> A tricycle hailing app for both drivers and passengers with admin panel for Tower TODA.</p>
             </div>
 
             {/* Links */}

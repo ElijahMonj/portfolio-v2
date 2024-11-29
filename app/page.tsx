@@ -15,15 +15,21 @@ export default function Home() {
       </div>
 
       {/* Text Section */}
-      <div className="w-full lg:w-1/2 md:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left">
-        <div className="w-3/4 py-5 transform transition duration-1000 ease-out translate-y-8 opacity-0 animate-hero">
-          <p className="text-2xl lg:text-2xl font-bold text-gray-800 ">Hello, I&apos;m</p>
-          <h1 className="text-5xl lg:text-5xl font-bold text-dark mb-4">Elijah Monjardin</h1>
-          <p className="text-lg lg:text-2xl text-gray-600">
-            A passionate React Developer who loves crafting elegant, user-friendly interfaces and turning ideas into seamless digital experiences. Let’s build something amazing together!
-          </p>
-        </div>
+      <div className="w-3/4 py-5 transform transition duration-1000 ease-out translate-y-8 opacity-0 animate-hero">
+        <p className="text-2xl lg:text-2xl font-semibold text-gray-800">
+          Hi, I’m <span className="text-dark font-bold">Elijah Monjardin</span> 👋
+        </p>
+        <h1 className="text-4xl lg:text-5xl font-bold text-dark mb-4">
+          A React Developer
+        </h1>
+        <p className="text-lg lg:text-2xl text-gray-600 mb-6">
+          I&apos;m an IT student that is passionate in developing react applications and building projects with others!
+        </p>
+        <blockquote className="italic text-gray-500 border-l-4 border-gray-300 pl-4">
+          &quot;The best way to predict the future is to create it.&quot; – Peter Drucker
+        </blockquote>
       </div>
+
     </main>
   );
 }

@@ -1,14 +1,14 @@
 
 import Image from "next/image";
-import me from '@/public/images/me.jpg'
+import image from '@/public/images/projects/capstone/2.jpg';
 import Link from "next/link";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 const Capstone = () => {
-    const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io"];
+    const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io","Semaphore"];
     return (
         <div className="w-full animateUp lg:flex-row md:w-full md:flex-row flex-col sm:w-128 xs:w-96 relative flex justify-between mx-auto p-5 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            {/* Project Image */}
-            <Image src={me} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
+            
+            <Image src={image} alt={'project image'} style={{ objectFit: "contain" }} className="rounded-lg md:h-48 md:w-auto w-full" />
 
             {/* Project Details */}
             <div className="p-3 w-full flex flex-col justify-between">

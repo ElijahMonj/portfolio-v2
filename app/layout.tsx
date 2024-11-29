@@ -51,7 +51,7 @@ export default function RootLayout({
                   <ul className="flex space-x-4">
                     <li><Link href={'/projects'} className="hover:text-darkgray transition duration-500 ease-out">Projects</Link></li>
                     <li><Link href={'/resume'} className="hover:text-darkgray transition duration-500 ease-out">Resume</Link></li>
-                    <li><Link href={'/contact'} className="hover:text-darkgray transition duration-500 ease-out">Contact</Link></li>
+                    {/* <li><Link href={'/contact'} className="hover:text-darkgray transition duration-500 ease-out">Contact</Link></li> */}
                   </ul>
                 </div>
               </nav>

@@ -16,7 +16,7 @@ const Projects = () => {
                 <div className='flex flex-wrap flex-row gap-5'>
                     <Project
                         title="Delight Nail Spa"
-                        description="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        description="A website for Delight Nail Spa that allows them to maange services online, customers to book appointments, and pay online."
                         technologies={['React','NextJS', 'Firebase','TypeScript','PayMongo','TailwindCSS','DaisyUI']}
                         image={delightNailSpa}
                         
@@ -43,8 +43,8 @@ const Projects = () => {
                     description="An AI chat web app where you could talk with different AI characters and even create your own virtual pal!"
                     technologies={['React', 'NextJS','NextAuth','TypeScript','Qroq','Llama','TailwindCSS','Cloudinary','DaisyUI','Prisma','PostgreSQL']}
                     image={neopal}
-                    github='/'
-                    link='/'
+                    github='https://github.com/ElijahMonj/ai-chat-app-web'
+                    link='https://neopal.vercel.app/'
                     label='Personal Hobby Project'
                 />
                    

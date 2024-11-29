@@ -1,15 +1,19 @@
 import Image from "next/image";
-import me from '@/public/images/me.jpg'
+import freelance from '@/public/images/projects/delightNailSpa.png'
 import Link from "next/link";
 import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
 
 const CardFreelance = () => {
     const technologies=['React','NextJS', 'Firebase','TypeScript','PayMongo','TailwindCSS','DaisyUI','Vercel']
-    return ( 
+    return (
         <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            
             {/* Image Section */}
-            <div className="rounded-t-lg overflow-hidden">
-                <Image src={me} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
+            <div className="relative rounded-t-lg overflow-hidden">
+                <Image src={freelance} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
+                <span className="absolute select-none top-3 left-3 bg-dark text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+                    Freelance Project
+                </span>
             </div>
             
             {/* Tags */}
@@ -27,7 +31,7 @@ const CardFreelance = () => {
             {/* Title and Description */}
             <div className="px-5">
                 <h3 className="text-xl font-bold mb-2">Delight Nail Spa: Online Appointment Booking System</h3>
-                <p className="text-gray-600 mb-4">A website for Delight Nail Spa that allows customers to book appointments online.</p>
+                <p className="text-gray-600 mb-4">A website for Delight Nail Spa that allows them to maange services online, customers to book appointments, and pay online.</p>
             </div>
 
             {/* Links */}

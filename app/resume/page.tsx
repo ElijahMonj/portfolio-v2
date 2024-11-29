@@ -9,6 +9,7 @@ import Me from '@/public/images/me.jpg'
 import Image from 'next/image';
 import { MdDownload } from 'react-icons/md';
 import CardFreelance from './CardFreelance';
+
 const Resume = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 text-dark animateUp">
@@ -54,7 +55,7 @@ const Resume = () => {
             </Link>
           </div>
           <p className="mt-4 text-lg text-dark leading-relaxed">
-            A passionate IT graduate with skills in react development, seeking to leverage my skills in a professional environment.
+            A passionate IT graduate skilled in React development, eager to apply my enthusiasm for building applications in a professional environment
           </p>
           
         </div>
@@ -120,6 +121,7 @@ const Resume = () => {
                 { Icon: SiNextdotjs, color: 'text-black', label: 'Next.js', tooltip: 'React framework with SSR' },
                 { Icon: SiTailwindcss, color: 'text-teal-500', label: 'Tailwind CSS', tooltip: 'Utility-first CSS framework' },
                 { Icon: FaBootstrap, color: 'text-purple-600', label: 'Bootstrap', tooltip: 'CSS framework for responsive design' },
+                { Icon: FaReact , color: 'text-blue-400', label: 'React Native', tooltip: 'Build mobile apps using React' },
               ].map(({ Icon, color, label, tooltip }, index) => (
                 <div
                   key={index}
@@ -256,10 +258,11 @@ const Resume = () => {
           Here are some of my featured projects.
         </p>
         
-        {/* Featured Projects */}
+       
         <div className="grid gap-6 md:grid-cols-2">
-        <CardCapstone/>
-        <CardFreelance/>
+          
+          <CardCapstone/>
+          <CardFreelance/>
         </div>
         <p className="text-dark my-6">
           For more projects, visit my <Link href="/projects" className="text-blue-500 underline">Projects page</Link>.
