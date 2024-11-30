@@ -29,8 +29,10 @@ const Projects = () => {
             <div className='text-3xl text-center font-bold animateUp'>Freelance Projects</div>
             <div className='flex flex-wrap flex-row gap-5 '>
                 <Project
-                    title="Delight Nail Spa"
-                    description="A website for Delight Nail Spa that allows them to maange services online, customers to book appointments, and pay online."
+                    // title="Delight Nail Spa"
+                    // description="A website for Delight Nail Spa that allows them to maange services online, customers to book appointments, and pay online."
+                    title="Online Booking System for a Spa"
+                    description="A website for a local Spa that allows them to manage services online, customers to book appointments, and pay online."
                     technologies={['React','NextJS', 'Firebase','TypeScript','PayMongo','TailwindCSS','DaisyUI']}
                     image={delightNailSpa}
                     

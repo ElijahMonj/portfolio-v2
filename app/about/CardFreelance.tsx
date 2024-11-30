@@ -30,8 +30,10 @@ const CardFreelance = () => {
 
             {/* Title and Description */}
             <div className="px-5">
-                <h3 className="text-xl font-bold mb-2">Delight Nail Spa: Online Appointment Booking System</h3>
-                <p className="text-gray-600 mb-4">A website for Delight Nail Spa that allows them to manage services online, customers to book appointments, and pay online.</p>
+                {/* <h3 className="text-xl font-bold mb-2">Delight Nail Spa: Online Appointment Booking System</h3>
+                <p className="text-gray-600 mb-4">A website for Delight Nail Spa that allows them to manage services online, customers to book appointments, and pay online.</p> */}
+                <h3 className="text-xl font-bold mb-2">Online Booking System for a Spa</h3>
+                <p className="text-gray-600 mb-4">A website for a local Spa that allows them to manage services online, customers to book appointments, and pay online.</p>
             </div>
 
             {/* Links */}
