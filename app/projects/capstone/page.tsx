@@ -95,8 +95,8 @@ const Page = () => {
         <p className="text-dark">
           Development a cloud-based multi-platform tricycle hailing system
             with real-time chat, emergency assistance, and GPS tracking for
-            Tower Toda. The project aimed to address the challenges faced by
-            commuters in Tower Toda, a barangay in the Philippines, by providing
+            Tower TODA. The project aimed to address the challenges faced by
+            commuters of Tower TODA, a barangay in the Philippines, by providing
             a convenient and reliable mode of transportation.
         </p>
       </div>
@@ -153,7 +153,7 @@ const Page = () => {
       <div className="max-w-2xl mx-auto my-10">
         <h2 className="text-3xl font-semibold mb-4">Challenges and Learnings</h2>
         <p className="text-dark mb-4">
-          One key challenge was conducting research to understand the needs of commuters in Tower Toda. 
+          One key challenge was conducting research to understand the needs of commuters in Tower TODA. 
           I learned how to speak to a client and write and conduct interviews and surveys that the respondents would understand to gather insights and feedback from potential users.
           This helped me identify key functionalities that would address their and gauge their level of tech literacy.
           I learned that it is important to consider the user&apos;s perspective when designing a product to ensure it meets their needs and expectations.

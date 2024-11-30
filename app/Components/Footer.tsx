@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
                 <div className="gap-4 bg-white justify-center items-center flex flex-col">
                 <Link
-                    href="/cv.pdf" // Replace with the actual path to your PDF file
+                    href="/Elijah-Monjardin-Resume.pdf" // Replace with the actual path to your PDF file
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-2 mt-5 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
