@@ -6,7 +6,7 @@ import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
 const CardCapstone = () => {
     const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io","Semaphore"];
     return ( 
-        <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col justify-between">
     
         <div className="relative rounded-t-lg overflow-hidden">
             <Image src={capstone} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />

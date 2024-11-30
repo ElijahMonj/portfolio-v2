@@ -6,7 +6,7 @@ import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
 const CardFreelance = () => {
     const technologies=['React','NextJS', 'Firebase','TypeScript','PayMongo','TailwindCSS','DaisyUI','Vercel']
     return (
-        <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col justify-between">
             
             {/* Image Section */}
             <div className="relative rounded-t-lg overflow-hidden">
@@ -31,7 +31,7 @@ const CardFreelance = () => {
             {/* Title and Description */}
             <div className="px-5">
                 <h3 className="text-xl font-bold mb-2">Delight Nail Spa: Online Appointment Booking System</h3>
-                <p className="text-gray-600 mb-4">A website for Delight Nail Spa that allows them to maange services online, customers to book appointments, and pay online.</p>
+                <p className="text-gray-600 mb-4">A website for Delight Nail Spa that allows them to manage services online, customers to book appointments, and pay online.</p>
             </div>
 
             {/* Links */}
