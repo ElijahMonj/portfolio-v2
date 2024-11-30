@@ -16,11 +16,11 @@ const SidebarContent = () => {
                 </li>
                 <li>
                   <Link
-                    href={'/resume'}
+                    href={'/about'}
                     className="block px-4 py-2 hover:bg-dark text-dark hover:text-white rounded-lg transition duration-300 ease-out peer-checked:hidden"
                     onClick={() => (document.getElementById('my-drawer') as HTMLInputElement).checked = false}
                   >
-                    Resume
+                    About
                   </Link>
                 </li>
                 {/* <li>

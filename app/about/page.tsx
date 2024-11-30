@@ -1,16 +1,29 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaShieldAlt, FaTools, FaHeartbeat, FaAdjust, FaSyncAlt, FaSearch, } from 'react-icons/fa';
-import { FaBriefcase, FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaComments, FaBootstrap, FaGithub, FaJava, FaMicrosoft, FaArrowUpRightFromSquare, FaLinkedin, FaEnvelope, FaClock, FaHeart, FaToolbox } from 'react-icons/fa6';
+import { FaReact, FaNodeJs, FaSyncAlt, FaSearch, } from 'react-icons/fa';
+import { FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaBootstrap, FaGithub, FaJava, FaLinkedin, FaEnvelope, FaClock, FaToolbox } from 'react-icons/fa6';
 import CardCapstone from './CardCapstone';
 import Link from 'next/link';
 import { SiCsharp, SiExpress, SiFirebase, SiMongodb, SiNextdotjs, SiPrisma, SiTailwindcss, SiVercel, SiVisualstudiocode } from 'react-icons/si';
 import { BiLogoJavascript, BiLogoPostgresql, BiLogoTypescript } from 'react-icons/bi';
 import Me from '@/public/images/me.jpg'
 import Image from 'next/image';
-import { MdDownload } from 'react-icons/md';
 import CardFreelance from './CardFreelance';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About | Elijah Monjardin | React Developer & IT Student",
+  description: "Explore Elijah Monjardin's details, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
+  openGraph: {
+    title: "About | Elijah Monjardin | React Developer & IT Student",
+    description: "Discover Elijah Monjardin's details, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
+    locale: "en_US",
+    url: "https://elijahmonjardin.tech/about",
+    siteName: "Elijah Monjardin",
+  },
+};
 
 const Resume = () => {
+  const githubLink = 'underline font-medium hover:text-darkgray transition duration-500 ease-out';
   return (
     <div className="max-w-4xl mx-auto p-6 text-dark animateUp">
       {/* Header Section */}
@@ -19,7 +32,7 @@ const Resume = () => {
         <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden">
           <Image 
             src={Me}
-            alt="John Doe" 
+            alt="Elijah Monjardin"
             className="w-full h-full object-cover" 
 
           />
@@ -34,20 +47,23 @@ const Resume = () => {
             <Link 
               href="https://github.com/ElijahMonj"
               target="_blank"
+              aria-label="GitHub"
               rel="noopener noreferrer"
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
                <FaGithub className="my-auto" />GitHub
             </Link>
             <Link 
-              href="https://www.linkedin.com/in/elijah-monjardin-1697a1168/"
+              href="https://www.linkedin.com/in/elijah-monjardin/"
               target="_blank"
+              aria-label="LinkedIn"
               rel="noopener noreferrer"
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
                <FaLinkedin className="my-auto" />LinkedIn
             </Link>
             <Link 
+              aria-label='Email'
               href="mailto:monjardinelijah120@gmail.com" 
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
@@ -64,6 +80,7 @@ const Resume = () => {
 
 
       {/* Education Section */}
+     
       <section className="mb-10">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
           <FaGraduationCap className="text-blue-500" /> Education
@@ -71,7 +88,7 @@ const Resume = () => {
         <div>
           <h3 className="text-lg font-medium">Bachelor’s in Information Technology</h3>
           <p className="text-sm text-dark">
-            STI College San Jose Del Monte - Graduated May 2025
+            STI College San Jose Del Monte – Graduated May 2025
           </p>
           <p className="text-dark mt-4">
             <strong>Relevant Coursework:</strong>
@@ -80,6 +97,22 @@ const Resume = () => {
             <li>Data Structures and Algorithms</li>
             <li>Web Systems and Technologies</li>
             <li>Advanced Database Systems (SQL)</li>
+          </ul>
+        </div>
+        
+        <div className="my-5">
+          <h3 className="text-lg font-medium">Full Stack JavaScript Curriculum</h3>
+          <p className="text-sm text-dark">
+            The Odin Project – Completed 2023
+          </p>
+          <p className="text-dark mt-4">
+            <strong>Key Skills:</strong>
+          </p>
+          <ul className="list-disc list-inside text-dark mt-2 space-y-1">
+            <li>Learned MongoDB, Express.js, React, and Node.js (MERN) full stack development</li>
+            <li>Learned Version Control using Git and GitHub</li>
+            <li>Learned Responsive Web Design and Bootstrap Framework</li>
+            <li>Developed projects such as a <a href='https://elijahmonj.github.io/Weather-App/' className={githubLink}>weather app</a>, <a href='https://elijahmonj.github.io/Tic-Tac-Toe/' className={githubLink}>tic-tac-toe game</a>, and <a href='https://github.com/ElijahMonj/think-and-share' className={githubLink}>social media platform</a></li>
           </ul>
         </div>
       </section>
@@ -253,7 +286,7 @@ const Resume = () => {
 
       {/* Projects Section */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+        <h2 className="text-2xl font-semibold mb-4">Featured Projects</h2>
         <p className="text-dark mb-6">
           Here are some of my featured projects.
         </p>
@@ -265,14 +298,14 @@ const Resume = () => {
           <CardFreelance/>
         </div>
         <p className="text-dark my-6">
-          For more projects, visit my <Link href="/projects" className="text-blue-500 underline">Projects page</Link>.
+          For more projects, visit my <Link href="/projects" aria-label='projects' className="text-blue-500 underline">Projects page</Link>.
         </p>
       </section>
       
       {/* Soft Skills Section */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-6">Soft Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {[
             {
               Icon: FaLightbulb,
@@ -325,19 +358,6 @@ const Resume = () => {
       </section>
 
 
-
-      {/* Downloadable Resume */}
-      <section className="text-center mt-12">
-        <Link
-            href="/cv.pdf" // Replace with the actual path to your PDF file
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2 mt-5 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
-        >
-             Download Resume (PDF)
-             <MdDownload className="my-auto" size={18} />
-        </Link>
-      </section>
     </div>
   );
 };

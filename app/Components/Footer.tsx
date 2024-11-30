@@ -19,7 +19,7 @@ const Footer = () => {
                         <FaSquareGithub size={32} className="hover:fill-darkgray transition duration-500 ease-out" />
                     </Link>
                     <Link target="_blank"
-                        rel="noopener noreferrer"href={'https://www.linkedin.com/in/elijah-monjardin-1697a1168/'}>
+                        rel="noopener noreferrer"href={'https://www.linkedin.com/in/elijah-monjardin/'}>
                         <FaLinkedin size={32} className="hover:fill-darkgray transition duration-500 ease-out" />
                     </Link>
                     <Link href="mailto:monjardinelijah120@gmail.com">
@@ -34,7 +34,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="px-5 py-2 mt-5 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
                 >
-                    Download CV <MdDownload className="my-auto" size={18} />
+                    Download Resume <MdDownload className="my-auto" size={18} />
                 </Link>
                 </div>
             </div>

@@ -9,7 +9,8 @@ export default function Home() {
         <Image
           src={Me}
           alt="me"
-          className="mx-auto w-64 lg:w-96 rounded-full lg:p-0 shadow-lg transform transition duration-1000 ease-out scale-0 opacity-0 animate-hero"
+          quality={100}
+          className="mx-auto w-56 lg:w-64 rounded-full lg:p-0 shadow-lg transform transition duration-1000 ease-out scale-0 opacity-0 animate-hero"
           style={{ objectFit: "contain" }}
         />
       </div>

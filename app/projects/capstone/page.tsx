@@ -3,7 +3,20 @@ import Image from "next/image";
 import Me from "@/public/images/me.jpg";
 import Link from "next/link";
 import Carousel from "./carousel";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "TricyCall Case Study | Elijah Monjardin | React Developer & IT Student",
+  description: "Explore the TricyCall case study, a cloud-based tricycle hailing app developed for Tower TODA, Philippines. Learn about the project's key features, technologies used, learnings, and outcomes.",
+  openGraph: {
+    title: "TricyCall Case Study | Elijah Monjardin | React Developer & IT Student",
+    description: "Discover the TricyCall case study, a cloud-based tricycle hailing app developed for Tower TODA, Philippines. Explore the project's key features, technologies used, learnings, and outcomes.",
+    type: "website",
+    locale: "en_US",
+    url: "https://elijahmonjardin.tech/projects/capstone",
+    siteName: "Elijah Monjardin",
+  },
+};
 const Page = () => {
   const teamMembers = [
     { name: "Louis Sindao", 
@@ -45,7 +58,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex gap-6 justify-center relative">
+        <div className="flex gap-10 justify-center relative">
             {teamMembers.map((member) => (
                 <Link
                 target="_blank"

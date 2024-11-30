@@ -7,6 +7,20 @@ import Project from './Project';
 
 import neopal from '@/public/images/projects/neopal.png'
 import Capstone from './Capstone';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Projects | Elijah Monjardin | React Developer & IT Student",
+    description: "Explore Elijah Monjardin's portfolio showcasing projects, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
+    openGraph: {
+      title: "Projects | Elijah Monjardin | React Developer & IT Student",
+      description: "View Elijah Monjardin's portfolio to discover innovative web projects and his recent academic and freelance projects.",
+      locale: "en_US",
+      url: "https://elijahmonjardin.tech/projects",
+      siteName: "Elijah Monjardin",
+    },
+  };
+
 const Projects = () => {
 
     return ( 
