@@ -44,39 +44,40 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      {/* Image Section */}
-      <div className="relative overflow-hidden rounded-lg h-[500px]">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === activeIndex ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-full z-0'
-            }`}
-          >
-            <Image
-              src={image}
-              alt={`Slide ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Pagination Indicators */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`h-1 w-8 cursor-pointer ${
-              index === activeIndex ? 'bg-dark' : 'bg-gray'
-            } transition-colors duration-300`}
-            onClick={() => goToSlide(index)}
-          ></div>
-        ))}
-      </div>
+    {/* Image Section */}
+    <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '16/9' }}>
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+            index === activeIndex ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-full z-0'
+          }`}
+        >
+          <Image
+            src={image}
+            alt={`Slide ${index + 1}`}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        </div>
+      ))}
     </div>
+  
+    {/* Pagination Indicators */}
+    <div className="flex justify-center mt-4 space-x-2">
+      {images.map((_, index) => (
+        <div
+          key={index}
+          className={`h-1 w-8 cursor-pointer ${
+            index === activeIndex ? 'bg-dark' : 'bg-gray'
+          } transition-colors duration-300`}
+          onClick={() => goToSlide(index)}
+        ></div>
+      ))}
+    </div>
+  </div>
+  
   );
 };
 

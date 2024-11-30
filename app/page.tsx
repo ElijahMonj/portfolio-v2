@@ -17,10 +17,10 @@ export default function Home() {
 
       {/* Text Section */}
       <div className="w-3/4 py-5 transform transition duration-1000 ease-out translate-y-8 opacity-0 animate-hero">
-        <p className="text-2xl lg:text-2xl font-semibold text-gray-800">
+        <p className="text-xl lg:text-2xl font-semibold text-gray-800">
           Hi, I’m <span className="text-dark font-bold">Elijah Monjardin</span> 👋
         </p>
-        <h1 className="text-4xl lg:text-5xl font-bold text-dark mb-4">
+        <h1 className="text-3xl lg:text-5xl font-bold text-dark mb-4">
           A React Developer
         </h1>
         <p className="text-lg lg:text-2xl text-gray-600 mb-6">

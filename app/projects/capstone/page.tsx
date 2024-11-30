@@ -33,10 +33,10 @@ const Page = () => {
       role:"Quality Assurance" },
   ];
   return (
-    <div className="w-full">
+    <div className="w-full px-5">
       {/* Project Header */}
       <div className="text-center px-5">
-        <h1 className="text-5xl font-bold mb-4">TricyCall: A Tricycle Hailing App</h1>
+        <h1 className="lg:text-5xl text-2xl font-bold mb-4">TricyCall: A Tricycle Hailing App</h1>
         <Carousel />
       </div>
 
