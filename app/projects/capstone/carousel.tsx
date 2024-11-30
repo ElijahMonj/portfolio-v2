@@ -41,7 +41,6 @@ const Carousel = () => {
     resetTimer(); // Reset timer on button click
   };
 
-
   return (
     <div className="relative w-full max-w-4xl mx-auto">
     {/* Image Section */}
