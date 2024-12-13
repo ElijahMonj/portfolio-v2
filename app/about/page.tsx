@@ -112,7 +112,7 @@ const Resume = () => {
             <li>Learned MongoDB, Express.js, React, and Node.js (MERN) full stack development</li>
             <li>Learned Version Control using Git and GitHub</li>
             <li>Learned Responsive Web Design and Bootstrap Framework</li>
-            <li>Developed projects such as a <a href='https://elijahmonj.github.io/Weather-App/' className={githubLink}>weather app</a>, <a href='https://elijahmonj.github.io/Tic-Tac-Toe/' className={githubLink}>tic-tac-toe game</a>, and <a href='https://github.com/ElijahMonj/think-and-share' className={githubLink}>social media platform</a></li>
+            <li>Developed projects such as a <a href='https://elijahmonj.github.io/Weather-App/' className={githubLink}>weather app</a>, <a href='https://elijahmonj.github.io/Tic-Tac-Toe/' className={githubLink}>tic-tac-toe game</a>, and <a href='https://github.com/ElijahMonj/think-and-share' className={githubLink}>social media web app</a></li>
           </ul>
         </div>
       </section>

@@ -26,7 +26,7 @@ const Projects = () => {
     return ( 
         <main className="h-auto my-auto flex w-full justify-around flex-col items-center lg:flex-row md:flex-row">
         <div className='w-full px-5'>
-            <div className='text-3xl text-center font-bold animateUp'>Freelance Projects</div>
+            <div className='text-xl text-center font-bold my-5 animateUp'>Freelance Projects</div>
             <div className='flex flex-wrap flex-row gap-5 '>
                 <Project
                     // title="Delight Nail Spa"
@@ -51,9 +51,9 @@ const Projects = () => {
                 /> */}
                 
             </div>   
-            <div className='text-3xl text-center my-5 font-bold animateUp'>Academic Projects</div>
+            <div className='text-xl my-5 text-center font-bold animateUp'>Academic Projects</div>
             <Capstone/>
-            <div className='text-3xl text-center my-5 font-bold animateUp'>Personal Projects</div>
+            <div className='text-xl my-5 text-center font-bold animateUp'>Personal Projects</div>
             <Project
                 title="NeoPal"
                 description="An AI chat web app where you could talk with different AI characters and even create your own virtual pal!"
