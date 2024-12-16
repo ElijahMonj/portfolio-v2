@@ -35,13 +35,13 @@ const Page = () => {
   return (
     <div className="w-full px-5">
       {/* Project Header */}
-      <div className="text-center px-5">
+      <div className="text-center px-5 animateUp">
         <h1 className="lg:text-5xl text-2xl font-bold mb-4">TricyCall: A Tricycle Hailing App</h1>
         <Carousel />
       </div>
 
       {/* Team Members Section */}
-      <div className="max-w-2xl mx-auto my-10">
+      <div className="max-w-2xl mx-auto my-10 animateUp">
         <h2 className="text-3xl font-semibold mb-4">Team Members</h2>
         {/* You */}
         <div className="flex flex-col items-center gap-4 mb-6">
@@ -90,7 +90,7 @@ const Page = () => {
       </div>
 
       {/* Project Overview */}
-      <div className="max-w-2xl mx-auto my-10">
+      <div className="max-w-2xl mx-auto my-10 animateUp">
         <h2 className="text-3xl font-semibold mb-4">Overview</h2>
         <p className="text-dark">
           Development a cloud-based multi-platform tricycle hailing system
@@ -102,7 +102,7 @@ const Page = () => {
       </div>
 
       {/* Key Features */}
-      <div className="max-w-2xl mx-auto my-10">
+      <div className="max-w-2xl mx-auto my-10 animateUp">
         <h2 className="text-3xl font-semibold mb-4">Key Features</h2>
         <ul className="list-disc pl-6 text-dark space-y-3">
             <li>
@@ -128,7 +128,7 @@ const Page = () => {
 
 
       {/* Technologies Used */}
-      <div className="max-w-2xl mx-auto my-10">
+      <div className="max-w-2xl mx-auto my-10 animateUp">
         <h2 className="text-3xl font-semibold mb-4">Technologies Used</h2>
         <p className="text-dark mb-4">
           The following technologies were utilized by the development team to build the app. My contributions focused on UI design, coding the user interface in React Native, and conducting user research and documentation.
@@ -150,7 +150,7 @@ const Page = () => {
 
 
       {/* Challenges and Learnings */}
-      <div className="max-w-2xl mx-auto my-10">
+      <div className="max-w-2xl mx-auto my-10 animateUp">
         <h2 className="text-3xl font-semibold mb-4">Challenges and Learnings</h2>
         <p className="text-dark mb-4">
           One key challenge was conducting research to understand the needs of commuters in Tower TODA. 
@@ -168,10 +168,11 @@ const Page = () => {
       </div>
 
       {/* Outcome */}
-      <div className="max-w-2xl mx-auto my-10">
+      <div className="max-w-2xl mx-auto my-10 animateUp">
         <h2 className="text-3xl font-semibold mb-4">Outcome</h2>
         <p className="text-dark">
-        TricyCall is now a fully functional prototype, tested in real-world scenarios, and recognized for its innovative approach to addressing commuter needs. The project received overwhelmingly positive feedback during its presentation, highlighting its significant potential for scalability. It was also selected for presentation at a prestigious symposium, showcasing its impact and relevance in solving transportation challenges.
+        TricyCall is now a fully functional prototype, tested in real-world scenarios, and recognized for its innovative approach to addressing commuter needs. The project received overwhelmingly positive feedback during its presentation, highlighting its significant potential for scalability.
+         It was also selected for presentation at STI Research Symposium 2024, showcasing its impact and relevance in solving transportation challenges.
         </p>
       </div>
     </div>
