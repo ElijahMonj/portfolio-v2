@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     title: "Projects | Elijah Monjardin | React Developer & IT Student",
     description: "Explore Elijah Monjardin's portfolio showcasing projects, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
     openGraph: {
-      title: "Projects | Elijah Monjardin | React Developer & IT Student",
-      description: "View Elijah Monjardin's portfolio to discover innovative web projects and his recent academic and freelance projects.",
-      locale: "en_US",
-      url: "https://elijahmonjardin.tech/projects",
-      siteName: "Elijah Monjardin",
+        title: "Projects | Elijah Monjardin | React Developer & IT Student",
+        description: "View Elijah Monjardin's portfolio to discover innovative web projects and his recent academic and freelance projects.",
+        locale: "en_US",
+        url: "https://elijahmonjardin.tech/projects",
+        siteName: "Elijah Monjardin",
     },
-  };
+};
 
 const Projects = () => {
 
@@ -40,15 +40,6 @@ const Projects = () => {
                     label='Freelance IT Project'
                 />
                 
-                {/* <Project
-                    title="Teksto"
-                    description="orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    technologies={['React', 'Firebase','TypeScript','Bootstrap','World News API','NodeJS','Express']}
-                    image={teksto}
-                    
-                    link='https://tekstolib.com/'
-                    label='Freelance IT Project'
-                /> */}
                 
             </div>   
             <div className='text-xl my-5 text-center font-bold animateUp'>Academic Projects</div>
@@ -63,10 +54,8 @@ const Projects = () => {
                 link='https://neopal.vercel.app/'
                 label='Personal Hobby Project'
             />
-                   
         </div>
         </main>
-     );
+    );
 }
- 
 export default Projects;

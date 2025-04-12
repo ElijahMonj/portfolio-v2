@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaSyncAlt, FaSearch, } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaSyncAlt, FaSearch, FaBriefcase, } from 'react-icons/fa';
 import { FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaBootstrap, FaGithub, FaJava, FaLinkedin, FaEnvelope, FaClock, FaToolbox } from 'react-icons/fa6';
 import CardCapstone from './CardCapstone';
 import Link from 'next/link';
@@ -77,10 +77,22 @@ const Resume = () => {
         </div>
       </header>
 
-
+      {/* Experience Section */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
+          <FaBriefcase className="text-purple-500" /> Experience
+        </h2>
+        <div>
+          <h3 className="text-lg font-medium">Full-Stack Developer Intern</h3>
+          <p className="text-sm text-dark">Lamina Studios - Feb 2025 - Present</p>
+          <ul className="list-disc list-inside text-dark mt-3 space-y-2">
+            <li>Worked on a Smart Logistics System using Laravel + Vue.js.</li>
+            <li>Collaborated with fellow developer interns to add a registration portal, a customizable landing page, improved SEO, and QR code implementation.</li>
+          </ul>
+        </div>
+      </section>
 
       {/* Education Section */}
-     
       <section className="mb-10">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
           <FaGraduationCap className="text-blue-500" /> Education
@@ -256,22 +268,6 @@ const Resume = () => {
 
         </div>
       </section>
-
-
-      {/* Experience Section */}
-      {/* <section className="mb-10">
-        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
-          <FaBriefcase className="text-purple-500" /> Experience
-        </h2>
-        <div>
-          <h3 className="text-lg font-medium">IT Intern</h3>
-          <p className="text-sm text-dark">Example Company - Jan 2023 to May 2023</p>
-          <ul className="list-disc list-inside text-dark mt-3 space-y-2">
-            <li>Assisted in maintaining and updating the company website using React and Node.js.</li>
-            <li>Supported the IT team in troubleshooting network issues and managing databases.</li>
-          </ul>
-        </div>
-      </section> */}
 
       {/* Certifications Section */}
       <section className="mb-10">

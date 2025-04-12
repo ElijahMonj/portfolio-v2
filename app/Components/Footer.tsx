@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaEnvelopeSquare } from "react-icons/fa";
-import {  FaLinkedin, FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
+import { FaLinkedin, FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 const Footer = () => {
     return ( 
