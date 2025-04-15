@@ -3,12 +3,13 @@ import { FaReact, FaNodeJs, FaSyncAlt, FaSearch, FaBriefcase, } from 'react-icon
 import { FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaBootstrap, FaGithub, FaJava, FaLinkedin, FaEnvelope, FaClock, FaToolbox } from 'react-icons/fa6';
 import CardCapstone from './CardCapstone';
 import Link from 'next/link';
-import { SiCsharp, SiExpress, SiFirebase, SiMongodb, SiNextdotjs, SiPrisma, SiTailwindcss, SiVercel, SiVisualstudiocode } from 'react-icons/si';
-import { BiLogoJavascript, BiLogoPostgresql, BiLogoTypescript } from 'react-icons/bi';
+import { SiAppwrite, SiExpress, SiFirebase, SiLaravel, SiMongodb, SiNextdotjs, SiPrisma, SiTailwindcss, SiVercel } from 'react-icons/si';
+import { BiLogoJavascript, BiLogoPhp, BiLogoPostgresql, BiLogoTypescript, BiLogoVuejs } from 'react-icons/bi';
 import Me from '@/public/images/me.jpg'
 import Image from 'next/image';
 import CardFreelance from './CardFreelance';
 import { Metadata } from 'next';
+import { TbBrandCSharp } from 'react-icons/tb';
 
 export const metadata: Metadata = {
   title: "About | Elijah Monjardin | React Developer & IT Student",
@@ -137,12 +138,13 @@ const Resume = () => {
         </h2>
         <div className="space-y-8">
            {/* Programming Languages */}
-           <div>
+          <div>
             <h3 className="text-xl font-medium text-dark mb-4">Programming Languages</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
                 { Icon: BiLogoJavascript, color: 'text-yellow-500', label: 'JavaScript', tooltip: 'Modern JavaScript' },
                 { Icon: BiLogoTypescript, color: 'text-blue-500', label: 'TypeScript', tooltip: 'Typed superset of JavaScript' },
+                { Icon: BiLogoPhp, color: 'text-blue-500', label: 'PHP', tooltip: 'Server-side scripting language' },
               ].map(({ Icon, color, label, tooltip }, index) => (
                 <div
                   key={index}
@@ -155,7 +157,7 @@ const Resume = () => {
               ))}
             </div>
           </div>
-         
+        
 
           {/* Frontend Development */}
           <div>
@@ -167,6 +169,7 @@ const Resume = () => {
                 { Icon: SiTailwindcss, color: 'text-teal-500', label: 'Tailwind CSS', tooltip: 'Utility-first CSS framework' },
                 { Icon: FaBootstrap, color: 'text-purple-600', label: 'Bootstrap', tooltip: 'CSS framework for responsive design' },
                 { Icon: FaReact , color: 'text-blue-400', label: 'React Native', tooltip: 'Build mobile apps using React' },
+                { Icon: BiLogoVuejs, color: 'text-green-500', label: 'Vue.js', tooltip: 'Progressive JavaScript framework' },
               ].map(({ Icon, color, label, tooltip }, index) => (
                 <div
                   key={index}
@@ -189,6 +192,8 @@ const Resume = () => {
                 { Icon: SiExpress, color: 'text-gray-600', label: 'Express.js', tooltip: 'Minimal web framework for Node' },
                 { Icon: SiPrisma, color: 'text-blue-900', label: 'Prisma', tooltip: 'Database ORM for Node.js and TypeScript' },
                 { Icon: SiFirebase, color: 'text-yellow-600', label: 'Firebase', tooltip: 'Backend platform by Google' },
+                { Icon: SiLaravel , color: 'text-red-600', label: 'Laravel', tooltip: 'PHP framework for web artisans' },
+                { Icon: SiAppwrite , color: 'text-red-500', label: 'Appwrite', tooltip: 'Open-source backend server' },
               ].map(({ Icon, color, label, tooltip }, index) => (
                 <div
                   key={index}
@@ -230,7 +235,7 @@ const Resume = () => {
               {[
                 { Icon: SiVercel, color: 'text-black', label: 'Vercel', tooltip: 'Deployment platform for modern web apps' },
                 { Icon: FaGithub, color: 'text-black', label: 'GitHub', tooltip: 'Version control and collaboration' },
-                { Icon: SiVisualstudiocode, color: 'text-blue-600', label: 'VS Code', tooltip: 'Code editor' },
+                
               ].map(({ Icon, color, label, tooltip }, index) => (
                 <div
                   key={index}
@@ -250,7 +255,7 @@ const Resume = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
                 { Icon: FaJava, color: 'text-red-600', label: 'Java', tooltip: 'General-purpose programming language' },
-                { Icon: SiCsharp, color: 'text-green-600', label: 'C#', tooltip: 'Language by Microsoft for enterprise development' },
+                { Icon: TbBrandCSharp, color: 'text-green-600', label: 'C#', tooltip: 'Language by Microsoft for enterprise development' },
 
                 
               ].map(({ Icon, color, label, tooltip }, index) => (
