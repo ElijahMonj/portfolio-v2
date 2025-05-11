@@ -38,17 +38,10 @@ const Capstone = () => {
             {/* Links */}
             <div className="flex flex-col justify-center gap-5 flex-shrink-0">
                 <Link
-                    href={'https://tricycall.online/'}
-                    target="_blank" rel="noopener noreferrer"
-                    className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
-                >
-                    View Website<FaArrowUpRightFromSquare className="my-auto" />
-                </Link>
-                <Link
                     href={'/projects/capstone'}
                     className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
                 >
-                    View Case Study <FaArrowUpRightFromSquare className="my-auto" size={18} />
+                    Case Study <FaArrowUpRightFromSquare className="my-auto" size={18} />
                 </Link>
             </div>
         </div>

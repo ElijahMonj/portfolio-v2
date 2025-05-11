@@ -35,16 +35,16 @@ const CardCapstone = () => {
 
             {/* Links */}
             <div className="flex justify-center pb-5 gap-4">
-            <Link href={'https://tricycall.online/'} 
+            {/* <Link href={'https://tricycall.online/'} 
                 target="_blank" rel="noopener noreferrer"
                 className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark transition duration-500 ease-out flex justify-center items-center gap-2"
                 aria-label="View Project"
                 >View <FaArrowUpRightFromSquare className="my-auto"/>
-            </Link>
+            </Link> */}
             <Link href={'/projects/capstone'} 
                 className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark transition duration-500 ease-out flex justify-center items-center gap-2"
                 aria-label="View Case Study"
-                >Case Study <FaArrowUpRightFromSquare className="my-auto"/></Link>
+                >View Case Study <FaArrowUpRightFromSquare className="my-auto"/></Link>
             </div>
         </div>
     );

@@ -25,6 +25,29 @@ export const metadata: Metadata = {
 
 const Resume = () => {
   const githubLink = 'underline font-medium hover:text-darkgray transition duration-500 ease-out';
+  const experiences = [
+    {
+      title: "Software Solutions Specialist",
+      company: "The Riviere Group, LLC",
+      url: "https://therivieregroup.org/",
+      duration: "May 2025 - Present",
+      bullets: [
+        "Contributed to the ongoing development and maintenance of client projects.",
+        "Utilize AI tools such as Bolt and Cursor to accelerate development tasks.",
+      ],
+    },
+    {
+      title: "Full-Stack Developer Intern",
+      company: "Lamina Studios, LLC",
+      url: "https://laminatechstudios.com/",
+      duration: "Feb 2025 - May 2025",
+      bullets: [
+        "Worked on a Smart Logistics System using Laravel + Vue.js.",
+        "Collaborated with fellow developer interns to add a registration portal, customizable landing page, improved SEO, and QR code implementation.",
+      ],
+    },
+  ];
+  
   return (
     <div className="max-w-4xl mx-auto p-6 text-dark animateUp">
       {/* Header Section */}
@@ -52,7 +75,7 @@ const Resume = () => {
               rel="noopener noreferrer"
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
-               <FaGithub className="my-auto" />GitHub
+              <FaGithub className="my-auto" />GitHub
             </Link>
             <Link 
               href="https://www.linkedin.com/in/elijah-monjardin/"
@@ -61,14 +84,14 @@ const Resume = () => {
               rel="noopener noreferrer"
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
-               <FaLinkedin className="my-auto" />LinkedIn
+              <FaLinkedin className="my-auto" />LinkedIn
             </Link>
             <Link 
               aria-label='Email'
               href="mailto:monjardinelijah120@gmail.com" 
               className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
             >
-               <FaEnvelope className="my-auto" />Email
+              <FaEnvelope className="my-auto" />Email
             </Link>
           </div>
           <p className="mt-4 text-lg text-dark leading-relaxed">
@@ -83,14 +106,27 @@ const Resume = () => {
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
           <FaBriefcase className="text-purple-500" /> Experience
         </h2>
-        <div>
-          <h3 className="text-lg font-medium">Full-Stack Developer Intern</h3>
-          <p className="text-sm text-dark">Lamina Studios - Feb 2025 - Present</p>
-          <ul className="list-disc list-inside text-dark mt-3 space-y-2">
-            <li>Worked on a Smart Logistics System using Laravel + Vue.js.</li>
-            <li>Collaborated with fellow developer interns to add a registration portal, a customizable landing page, improved SEO, and QR code implementation.</li>
-          </ul>
-        </div>
+        {experiences.map((exp, index) => (
+          <div key={index} className="mb-3">
+            <h3 className="text-lg font-medium">{exp.title}</h3>
+            <p className="text-sm text-dark">
+              <a
+                href={exp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:text-darkgray transition duration-500 ease-out"
+              >
+                {exp.company}
+              </a>{" "}
+              - {exp.duration}
+            </p>
+            <ul className="list-disc list-inside text-dark mt-3 space-y-2">
+              {exp.bullets.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
 
       {/* Education Section */}
@@ -99,9 +135,9 @@ const Resume = () => {
           <FaGraduationCap className="text-blue-500" /> Education
         </h2>
         <div>
-          <h3 className="text-lg font-medium">Bachelor’s in Information Technology</h3>
+          <h3 className="text-lg font-medium">Bachelor of Science in Information Technology</h3>
           <p className="text-sm text-dark">
-            STI College San Jose Del Monte – Graduated May 2025
+            STI College San Jose Del Monte – Graduated June 2025
           </p>
           <p className="text-dark mt-4">
             <strong>Relevant Coursework:</strong>
