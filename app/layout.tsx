@@ -14,8 +14,14 @@ const inter = Raleway({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elijahmonjardin.tech"),
-  title: "Elijah Monjardin | React Developer & IT Student",
-  description: "Explore Elijah Monjardin's portfolio showcasing projects, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
+  title: {
+    template: '%s | Elijah Monjardin',
+    default: 'Elijah Monjardin | React Developer & IT Student',
+  },
+  description: "Elijah Monjardin is a React Developer and IT graduate specializing in web development. Explore his portfolio showcasing React, Next.js, and full-stack projects.",
+  keywords: ["Elijah Monjardin", "React Developer", "Web Developer", "IT Student", "Portfolio", "Next.js Developer", "Full Stack Developer", "Philippines Developer"],
+  authors: [{ name: "Elijah Monjardin" }],
+  creator: "Elijah Monjardin",
   openGraph: {
     title: "Elijah Monjardin | React Developer & IT Student",
     description: "Dive into Elijah Monjardin's portfolio to discover innovative web projects, technical expertise, and a passion for creating user-focused digital solutions.",
@@ -23,6 +29,26 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://elijahmonjardin.tech/",
     siteName: "Elijah Monjardin",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Elijah Monjardin - React Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elijah Monjardin | React Developer & IT Student",
+    description: "Explore Elijah Monjardin's portfolio showcasing innovative web development projects and technical expertise.",
+    images: ["/opengraph-image.jpg"],
+  },
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_ID", // Add your Google Search Console verification ID
+  },
+  alternates: {
+    canonical: "https://elijahmonjardin.tech",
   },
 };
 
@@ -33,6 +59,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href="https://elijahmonjardin.tech" />
+      </head>
       <body className={`${inter.className} bg-white text-dark`}>
         <div className="min-h-screen flex flex-col w-full max-w-7xl mx-auto">
           {/* Main Layout Container */}
@@ -60,7 +89,6 @@ export default function RootLayout({
                   <ul className="flex space-x-4">
                     <li><Link href={'/projects'} className="hover:text-darkgray transition duration-500 ease-out">Projects</Link></li>
                     <li><Link href={'/about'} className="hover:text-darkgray transition duration-500 ease-out">About</Link></li>
-                    {/* <li><Link href={'/contact'} className="hover:text-darkgray transition duration-500 ease-out">Contact</Link></li> */}
                   </ul>
                 </div>
               </nav>
