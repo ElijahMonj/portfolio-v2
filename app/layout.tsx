@@ -120,6 +120,7 @@ export default function RootLayout({
                 <IoClose className="w-6 h-6 hover:text-darkgray transition duration-500 ease-out" />
               </label>
               <SidebarContent />
+             
             </aside>
           </div>
         </div>
