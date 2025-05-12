@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.jpg"],
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_ID", // Add your Google Search Console verification ID
+    google: "ZzwOU7xIRSjOPBdQQqdXsaX7N0s_RD3jK5zjdkoeN_s",
   },
   alternates: {
     canonical: "https://elijahmonjardin.tech",
@@ -61,6 +61,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="canonical" href="https://elijahmonjardin.tech" />
+        <meta name="google-site-verification" content="ZzwOU7xIRSjOPBdQQqdXsaX7N0s_RD3jK5zjdkoeN_s" />
       </head>
       <body className={`${inter.className} bg-white text-dark`}>
         <div className="min-h-screen flex flex-col w-full max-w-7xl mx-auto">
