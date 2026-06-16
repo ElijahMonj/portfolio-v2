@@ -1,402 +1,331 @@
-import React from 'react';
-import { FaReact, FaNodeJs, FaSyncAlt, FaSearch, FaBriefcase, } from 'react-icons/fa';
-import { FaCertificate, FaGraduationCap, FaLaptopCode, FaUsers, FaLightbulb, FaBootstrap, FaGithub, FaJava, FaLinkedin, FaEnvelope, FaClock, FaToolbox } from 'react-icons/fa6';
-import CardCapstone from './CardCapstone';
-import Link from 'next/link';
-import { SiAppwrite, SiExpress, SiFirebase, SiLaravel, SiMongodb, SiNextdotjs, SiPrisma, SiTailwindcss, SiVercel } from 'react-icons/si';
-import { BiLogoJavascript, BiLogoPhp, BiLogoPostgresql, BiLogoTypescript, BiLogoVuejs } from 'react-icons/bi';
-import Me from '@/public/images/me.jpg'
-import Image from 'next/image';
-import CardFreelance from './CardFreelance';
-import { Metadata } from 'next';
-import { TbBrandCSharp } from 'react-icons/tb';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Metadata } from "next";
+import Me from "@/public/images/me.jpg";
+import neopal from "@/public/images/projects/neopal.png";
+import { FaReact, FaNodeJs, FaBriefcase } from "react-icons/fa";
+import {
+  FaCertificate,
+  FaGraduationCap,
+  FaLaptopCode,
+  FaBootstrap,
+  FaGithub,
+  FaJava,
+  FaLinkedin,
+  FaEnvelope,
+} from "react-icons/fa6";
+import {
+  SiAppwrite,
+  SiExpress,
+  SiFirebase,
+  SiLaravel,
+  SiMongodb,
+  SiNextdotjs,
+  SiPrisma,
+  SiTailwindcss,
+  SiVercel,
+  SiExpo,
+  SiGooglecloud,
+  SiClaude,
+  SiGoogleadmob,
+  SiRevenuecat,
+  SiSupabase,
+} from "react-icons/si";
+import {
+  BiLogoJavascript,
+  BiLogoPhp,
+  BiLogoPostgresql,
+  BiLogoTypescript,
+  BiLogoVuejs,
+} from "react-icons/bi";
+import { TbBrandCSharp, TbBrandReactNative } from "react-icons/tb";
+import { IconType } from "react-icons";
+import CardCapstone from "./CardCapstone";
+import Project from "../projects/Project";
+import ExperienceCard from "../Components/ExperienceCard";
+import { Reveal, RevealGroup, RevealItem } from "../Components/motion/Reveal";
+import { EXPERIENCES } from "../lib/content";
+import { SITE } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "About | Elijah Monjardin | React Developer & IT Student",
-  description: "Explore Elijah Monjardin's details, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
+  title: "About",
+  description:
+    "Learn about Elijah Monjardin — a full stack software engineer building React, React Native, and Next.js apps. Explore his experience, skills, and education.",
+  alternates: { canonical: "/about" },
   openGraph: {
-    title: "About | Elijah Monjardin | React Developer & IT Student",
-    description: "Discover Elijah Monjardin's details, skills, and achievements in web development, React, and IT. Contact for collaborations and opportunities.",
-    locale: "en_US",
-    url: "https://elijahmonjardin.tech/about",
-    siteName: "Elijah Monjardin",
+    title: "About | Elijah Monjardin",
+    description:
+      "Discover Elijah Monjardin's experience, skills, and achievements in React and full-stack web development.",
+    url: `${SITE.url}/about`,
   },
 };
 
-const Resume = () => {
-  const githubLink = 'underline font-medium hover:text-darkgray transition duration-500 ease-out';
-  const experiences = [
-    {
-      title: "Software Solutions Specialist",
-      company: "The Riviere Group, LLC",
-      url: "https://therivieregroup.org/",
-      duration: "May 2025 - Present",
-      bullets: [
-        "Contributed to the ongoing development and maintenance of client projects.",
-        "Utilize AI tools such as Bolt and Cursor to accelerate development tasks.",
-      ],
-    },
-    {
-      title: "Full-Stack Developer Intern",
-      company: "Lamina Studios, LLC",
-      url: "https://laminatechstudios.com/",
-      duration: "Feb 2025 - May 2025",
-      bullets: [
-        "Worked on a Smart Logistics System using Laravel + Vue.js.",
-        "Collaborated with fellow developer interns to add a registration portal, customizable landing page, improved SEO, and QR code implementation.",
-      ],
-    },
-  ];
-  
+type Skill = { Icon: IconType; label: string; color: string };
+type SkillGroup = { title: string; skills: Skill[] };
+
+const SKILL_GROUPS: SkillGroup[] = [
+  {
+    title: "Languages",
+    skills: [
+      { Icon: BiLogoJavascript, label: "JavaScript", color: "text-[#F7DF1E]" },
+      { Icon: BiLogoTypescript, label: "TypeScript", color: "text-[#3178C6]" },
+      { Icon: BiLogoPhp, label: "PHP", color: "text-[#777BB4]" },
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      { Icon: FaReact, label: "React", color: "text-[#61DAFB]" },
+      { Icon: SiNextdotjs, label: "Next.js", color: "text-foreground" },
+      { Icon: SiTailwindcss, label: "Tailwind CSS", color: "text-[#38BDF8]" },
+      { Icon: FaBootstrap, label: "Bootstrap", color: "text-[#7952B3]" },
+      { Icon: BiLogoVuejs, label: "Vue.js", color: "text-[#42B883]" },
+    ],
+  },
+  {
+    title: "Mobile & Monetization",
+    skills: [
+      { Icon: TbBrandReactNative, label: "React Native", color: "text-[#61DAFB]" },
+      { Icon: SiExpo, label: "Expo", color: "text-foreground" },
+      { Icon: SiRevenuecat, label: "RevenueCat", color: "text-[#F2545B]" },
+      { Icon: SiGoogleadmob, label: "AdMob", color: "text-[#4285F4]" },
+    ],
+  },
+  {
+    title: "Backend & Cloud",
+    skills: [
+      { Icon: FaNodeJs, label: "Node.js", color: "text-[#5FA04E]" },
+      { Icon: SiExpress, label: "Express.js", color: "text-foreground" },
+      { Icon: SiPrisma, label: "Prisma", color: "text-foreground" },
+      { Icon: SiFirebase, label: "Firebase", color: "text-[#FFCA28]" },
+      { Icon: SiGooglecloud, label: "Cloud Functions", color: "text-[#4285F4]" },
+      { Icon: SiLaravel, label: "Laravel", color: "text-[#FF2D20]" },
+      { Icon: SiAppwrite, label: "Appwrite", color: "text-[#FD366E]" },
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      { Icon: SiMongodb, label: "MongoDB", color: "text-[#47A248]" },
+      { Icon: BiLogoPostgresql, label: "PostgreSQL", color: "text-[#4169E1]" },
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: [
+      { Icon: SiVercel, label: "Vercel", color: "text-foreground" },
+      { Icon: FaGithub, label: "GitHub", color: "text-foreground" },
+      { Icon: SiClaude, label: "Claude Code", color: "text-[#D97757]" },
+      { Icon: SiSupabase, label: "Supabase", color: "text-[#3FCF8E]" },
+    ],
+  },
+  {
+    title: "Also familiar with",
+    skills: [
+      { Icon: FaJava, label: "Java", color: "text-[#E76F00]" },
+      { Icon: TbBrandCSharp, label: "C#", color: "text-[#9B4F96]" },
+    ],
+  },
+];
+
+const linkClass =
+  "text-accent-blue underline-offset-4 hover:underline transition-colors";
+
+function SectionTitle({ Icon, children }: { Icon: IconType; children: React.ReactNode }) {
   return (
-    <div className="max-w-4xl mx-auto p-6 text-dark animateUp">
-      {/* Header Section */}
-      <header className="mb-10 flex flex-col items-center lg:flex-row lg:items-start lg:gap-8">
-        {/* Left Column - Image */}
-        <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden">
-          <Image 
-            src={Me}
-            alt="Elijah Monjardin"
-            className="w-full h-full object-cover" 
+    <h2 className="flex items-center gap-3 font-display text-2xl font-bold sm:text-3xl">
+      <Icon className="text-accent-blue" /> {children}
+    </h2>
+  );
+}
 
-          />
-        </div>
-
-        {/* Right Column - Content */}
-        <div className="mt-6 text-center lg:text-left lg:mt-0 flex-1">
-          <h1 className="text-5xl lg:text-6xl font-extrabold">Elijah Monjardin</h1>
-          <p className="text-2xl text-dark mt-2">React Developer</p>
-          <div className="flex justify-center lg:justify-start gap-4 mt-6">
-            {/* Social Links with Button Style */}
-            <Link 
-              href="https://github.com/ElijahMonj"
-              target="_blank"
-              aria-label="GitHub"
-              rel="noopener noreferrer"
-              className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
-            >
-              <FaGithub className="my-auto" />GitHub
-            </Link>
-            <Link 
-              href="https://www.linkedin.com/in/elijah-monjardin/"
-              target="_blank"
-              aria-label="LinkedIn"
-              rel="noopener noreferrer"
-              className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
-            >
-              <FaLinkedin className="my-auto" />LinkedIn
-            </Link>
-            <Link 
-              aria-label='Email'
-              href="mailto:monjardinelijah120@gmail.com" 
-              className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark flex justify-center items-center gap-2 transition duration-500 ease-out"
-            >
-              <FaEnvelope className="my-auto" />Email
-            </Link>
+const About = () => {
+  return (
+    <div className="mx-auto max-w-4xl py-12 lg:py-20">
+      {/* Header */}
+      <Reveal>
+        <header className="flex flex-col items-center gap-8 text-center lg:flex-row lg:items-start lg:text-left">
+          <div className="relative shrink-0">
+            <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-accent-cyan/30 to-accent-violet/30 blur-xl" />
+            <div className="relative rounded-full bg-gradient-to-tr from-accent-cyan via-accent-blue to-accent-violet p-[3px]">
+              <Image
+                src={Me}
+                alt="Elijah Monjardin"
+                className="h-40 w-40 rounded-full object-cover lg:h-44 lg:w-44"
+              />
+            </div>
           </div>
-          <p className="mt-4 text-lg text-dark leading-relaxed">
-            A passionate IT graduate skilled in React development, eager to apply my enthusiasm for building applications in a professional environment
-          </p>
-          
-        </div>
-      </header>
 
-      {/* Experience Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
-          <FaBriefcase className="text-purple-500" /> Experience
-        </h2>
-        {experiences.map((exp, index) => (
-          <div key={index} className="mb-3">
-            <h3 className="text-lg font-medium">{exp.title}</h3>
-            <p className="text-sm text-dark">
-              <a
-                href={exp.url}
+          <div>
+            <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+              Elijah Monjardin
+            </h1>
+            <p className="mt-2 text-xl text-muted">Full Stack Software Engineer</p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <Link
+                href="https://github.com/ElijahMonj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold hover:text-darkgray transition duration-500 ease-out"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-accent-blue/40 hover:text-accent-blue"
               >
-                {exp.company}
-              </a>{" "}
-              - {exp.duration}
+                <FaGithub /> GitHub
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/elijah-monjardin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-accent-blue/40 hover:text-accent-blue"
+              >
+                <FaLinkedin /> LinkedIn
+              </Link>
+              <Link
+                href={`mailto:${SITE.email}`}
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-accent-blue/40 hover:text-accent-blue"
+              >
+                <FaEnvelope /> Email
+              </Link>
+            </div>
+            <p className="mt-5 max-w-xl text-muted">
+              A full stack software engineer who builds and ships products across
+              web and mobile. These days I&apos;m deep in React Native — taking
+              apps end to end, from the first commit to the app store and
+              everything after.
             </p>
-            <ul className="list-disc list-inside text-dark mt-3 space-y-2">
-              {exp.bullets.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
+          </div>
+        </header>
+      </Reveal>
+
+      {/* Experience */}
+      <section className="mt-16">
+        <Reveal>
+          <SectionTitle Icon={FaBriefcase}>Experience</SectionTitle>
+        </Reveal>
+        <RevealGroup className="mt-6 grid gap-6 md:grid-cols-2">
+          {EXPERIENCES.map((exp) => (
+            <RevealItem key={exp.company}>
+              <ExperienceCard exp={exp} />
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </section>
+
+      {/* Education */}
+      <section className="mt-16">
+        <Reveal>
+          <SectionTitle Icon={FaGraduationCap}>Education</SectionTitle>
+        </Reveal>
+        <Reveal className="mt-6 space-y-6">
+          <div className="glass rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold">
+              BS in Information Technology
+            </h3>
+            <p className="text-sm text-muted">
+              STI College San Jose Del Monte — Graduated June 2025
+            </p>
+            <p className="mt-4 text-sm font-medium">Relevant coursework:</p>
+            <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-muted">
+              <li>Data Structures and Algorithms</li>
+              <li>Web Systems and Technologies</li>
+              <li>Advanced Database Systems (SQL)</li>
             </ul>
           </div>
-        ))}
+          <div className="glass rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold">
+              Full Stack JavaScript Curriculum
+            </h3>
+            <p className="text-sm text-muted">The Odin Project — Completed 2023</p>
+            <ul className="mt-4 list-inside list-disc space-y-1 text-sm text-muted">
+              <li>MongoDB, Express.js, React, and Node.js (MERN) full-stack development</li>
+              <li>Version control with Git and GitHub</li>
+              <li>
+                Built projects such as a{" "}
+                <a href="https://elijahmonj.github.io/Tic-Tac-Toe/" className={linkClass}>
+                  tic-tac-toe game
+                </a>
+              </li>
+            </ul>
+          </div>
+        </Reveal>
       </section>
 
-      {/* Education Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
-          <FaGraduationCap className="text-blue-500" /> Education
-        </h2>
-        <div>
-          <h3 className="text-lg font-medium">Bachelor of Science in Information Technology</h3>
-          <p className="text-sm text-dark">
-            STI College San Jose Del Monte – Graduated June 2025
-          </p>
-          <p className="text-dark mt-4">
-            <strong>Relevant Coursework:</strong>
-          </p>
-          <ul className="list-disc list-inside text-dark mt-2 space-y-1">
-            <li>Data Structures and Algorithms</li>
-            <li>Web Systems and Technologies</li>
-            <li>Advanced Database Systems (SQL)</li>
-          </ul>
-        </div>
-        
-        <div className="my-5">
-          <h3 className="text-lg font-medium">Full Stack JavaScript Curriculum</h3>
-          <p className="text-sm text-dark">
-            The Odin Project – Completed 2023
-          </p>
-          <p className="text-dark mt-4">
-            <strong>Key Skills:</strong>
-          </p>
-          <ul className="list-disc list-inside text-dark mt-2 space-y-1">
-            <li>Learned MongoDB, Express.js, React, and Node.js (MERN) full stack development</li>
-            <li>Learned Version Control using Git and GitHub</li>
-            <li>Learned Responsive Web Design and Bootstrap Framework</li>
-            <li>Developed projects such as a <a href='https://elijahmonj.github.io/Weather-App/' className={githubLink}>weather app</a>, <a href='https://elijahmonj.github.io/Tic-Tac-Toe/' className={githubLink}>tic-tac-toe game</a>, and <a href='https://github.com/ElijahMonj/think-and-share' className={githubLink}>social media web app</a></li>
-          </ul>
-        </div>
-      </section>
-
-
-      {/* Technical Skills Section */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
-          <FaLaptopCode className="text-green-500" /> Technical Skills
-        </h2>
-        <div className="space-y-8">
-           {/* Programming Languages */}
-          <div>
-            <h3 className="text-xl font-medium text-dark mb-4">Programming Languages</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { Icon: BiLogoJavascript, color: 'text-yellow-500', label: 'JavaScript', tooltip: 'Modern JavaScript' },
-                { Icon: BiLogoTypescript, color: 'text-blue-500', label: 'TypeScript', tooltip: 'Typed superset of JavaScript' },
-                { Icon: BiLogoPhp, color: 'text-blue-500', label: 'PHP', tooltip: 'Server-side scripting language' },
-              ].map(({ Icon, color, label, tooltip }, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 hover:scale-105 transform transition duration-300 relative cursor-default"
-                  title={tooltip}
-                >
-                  <Icon className={`${color} text-3xl`} />
-                  <p className="text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        
-
-          {/* Frontend Development */}
-          <div>
-            <h3 className="text-xl font-medium text-dark mb-4">Frontend Development</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { Icon: FaReact, color: 'text-blue-500', label: 'React', tooltip: 'JavaScript library for building UIs' },
-                { Icon: SiNextdotjs, color: 'text-black', label: 'Next.js', tooltip: 'React framework with SSR' },
-                { Icon: SiTailwindcss, color: 'text-teal-500', label: 'Tailwind CSS', tooltip: 'Utility-first CSS framework' },
-                { Icon: FaBootstrap, color: 'text-purple-600', label: 'Bootstrap', tooltip: 'CSS framework for responsive design' },
-                { Icon: FaReact , color: 'text-blue-400', label: 'React Native', tooltip: 'Build mobile apps using React' },
-                { Icon: BiLogoVuejs, color: 'text-green-500', label: 'Vue.js', tooltip: 'Progressive JavaScript framework' },
-              ].map(({ Icon, color, label, tooltip }, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 hover:scale-105 transform transition duration-300 relative cursor-default"
-                  title={tooltip}
-                >
-                  <Icon className={`${color} text-3xl`} />
-                  <p className="text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Backend Development */}
-          <div>
-            <h3 className="text-xl font-medium text-dark mb-4">Backend Development</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { Icon: FaNodeJs, color: 'text-green-500', label: 'Node.js', tooltip: 'JavaScript runtime for server-side' },
-                { Icon: SiExpress, color: 'text-gray-600', label: 'Express.js', tooltip: 'Minimal web framework for Node' },
-                { Icon: SiPrisma, color: 'text-blue-900', label: 'Prisma', tooltip: 'Database ORM for Node.js and TypeScript' },
-                { Icon: SiFirebase, color: 'text-yellow-600', label: 'Firebase', tooltip: 'Backend platform by Google' },
-                { Icon: SiLaravel , color: 'text-red-600', label: 'Laravel', tooltip: 'PHP framework for web artisans' },
-                { Icon: SiAppwrite , color: 'text-red-500', label: 'Appwrite', tooltip: 'Open-source backend server' },
-              ].map(({ Icon, color, label, tooltip }, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 hover:scale-105 transform transition duration-300 relative cursor-default"
-                  title={tooltip}
-                >
-                  <Icon className={`${color} text-3xl`} />
-                  <p className="text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        
-           {/* Database */}
-           <div>
-            <h3 className="text-xl font-medium text-dark mb-4">Databases</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-               
-                { Icon: SiMongodb, color: 'text-green-600', label: 'MongoDB', tooltip: 'NoSQL database' },
-                { Icon: BiLogoPostgresql, color: 'text-[#336791]', label: 'PostgreSQL', tooltip: 'Relational database' },
-              ].map(({ Icon, color, label, tooltip }, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 hover:scale-105 transform transition duration-300 relative cursor-default"
-                  title={tooltip}
-                >
-                  <Icon className={`${color} text-3xl`} />
-                  <p className="text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tools & Platforms */}
-          <div>
-            <h3 className="text-xl font-medium text-dark mb-4">Tools & Platforms</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { Icon: SiVercel, color: 'text-black', label: 'Vercel', tooltip: 'Deployment platform for modern web apps' },
-                { Icon: FaGithub, color: 'text-black', label: 'GitHub', tooltip: 'Version control and collaboration' },
-                
-              ].map(({ Icon, color, label, tooltip }, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 hover:scale-105 transform transition duration-300 relative cursor-default"
-                  title={tooltip}
-                >
-                  <Icon className={`${color} text-3xl`} />
-                  <p className="text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Additional Knowledge */}
-          <div>
-            <h3 className="text-xl font-medium text-dark mb-4">Additional Knowledge</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { Icon: FaJava, color: 'text-red-600', label: 'Java', tooltip: 'General-purpose programming language' },
-                { Icon: TbBrandCSharp, color: 'text-green-600', label: 'C#', tooltip: 'Language by Microsoft for enterprise development' },
-
-                
-              ].map(({ Icon, color, label, tooltip }, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 hover:scale-105 transform transition duration-300 relative cursor-default"
-                  title={tooltip}
-                >
-                  <Icon className={`${color} text-3xl`} />
-                  <p className="text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
-          <FaCertificate className="text-orange-500" /> Certifications & Courses
-        </h2>
-        <ul className="list-disc list-inside text-dark space-y-2">
-          <li>Java Foundations - Oracle Academy</li>
-          <li>Systems Administration - Linux Profesional Institute</li>
-        </ul>
-      </section>
-
-      {/* Projects Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Featured Projects</h2>
-        <p className="text-dark mb-6">
-          Here are some of my featured projects.
-        </p>
-        
-       
-        <div className="grid gap-6 md:grid-cols-2">
-          
-          <CardCapstone/>
-          <CardFreelance/>
-        </div>
-        <p className="text-dark my-6">
-          For more projects, visit my <Link href="/projects" aria-label='projects' className="text-blue-500 underline">Projects page</Link>.
-        </p>
-      </section>
-      
-      {/* Soft Skills Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-6">Soft Skills</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {[
-            {
-              Icon: FaLightbulb,
-              color: 'text-yellow-500',
-              label: 'Critical thinking',
-              description: "Identified inefficiencies in the manual process of expiring unattended appointments and implemented an automated solution using cron jobs to reduce manual effort.",
-            },
-            {
-              Icon: FaSyncAlt,
-              color: 'text-blue-500',
-              label: 'Adaptability',
-              description: "Adapted to changes in tools by learning and using Firebase to speed up development and meet the client's deadline. Transitioned from developer to researcher during the capstone thesis.",
-            },
-            {
-              Icon: FaUsers,
-              color: 'text-green-500',
-              label: 'Team Collaboration & Communication',
-              description: 'Led the capstone documentation and research, and ensured alignment between study objectives and the developed system through clear communication with the co-developer.',
-            },
-            {
-              Icon: FaSearch,
-              color: 'text-pink-500',
-              label: 'Research',
-              description: 'Conducted client interviews and tricycle driver surveys to identify core problems and user needs, forming the foundation of solution.',
-            },
-            {
-              Icon: FaClock,
-              color: 'text-purple-500',
-              label: 'Effective Time & Stress Management',
-              description: 'Divided research and documentation tasks into manageable steps for our capstone project, reducing team stress and meeting deadline.',
-            },
-            {
-              Icon: FaToolbox,
-              color: 'text-orange-500',
-              label: 'Resourcefulness',
-              description: 'Utilized design ideas from Dribbble and existing technologies, such as react-native-gifted-chat, to accelerate development processes and meet tight deadlines.',
-            },
-          ].map(({ Icon, color, label, description }, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg flex gap-4 hover:shadow-lg transition duration-300 ease-out">
-              <div>
-                <Icon className={`${color} text-2xl`} />
+      {/* Technical Skills */}
+      <section className="mt-16">
+        <Reveal>
+          <SectionTitle Icon={FaLaptopCode}>Technical Skills</SectionTitle>
+        </Reveal>
+        <div className="mt-6 space-y-8">
+          {SKILL_GROUPS.map((group) => (
+            <Reveal key={group.title}>
+              <h3 className="mb-3 text-sm font-medium uppercase tracking-[0.15em] text-muted">
+                {group.title}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {group.skills.map((skill, i) => (
+                  <span
+                    key={`${skill.label}-${i}`}
+                    className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    <skill.Icon className={`h-5 w-5 ${skill.color}`} />
+                    {skill.label}
+                  </span>
+                ))}
               </div>
-              <div>
-                <h3 className="font-semibold">{label}</h3>
-                <p className="text-sm">{description}</p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
+      {/* Certifications */}
+      <section className="mt-16">
+        <Reveal>
+          <SectionTitle Icon={FaCertificate}>Certifications & Courses</SectionTitle>
+        </Reveal>
+        <Reveal className="mt-6">
+          <ul className="glass space-y-2 rounded-2xl p-6 text-sm text-muted">
+            <li>Java Foundations — Oracle Academy</li>
+            <li>Systems Administration — Linux Professional Institute</li>
+          </ul>
+        </Reveal>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="mt-16">
+        <Reveal>
+          <h2 className="font-display text-2xl font-bold sm:text-3xl">
+            Featured <span className="text-gradient">projects</span>
+          </h2>
+          <p className="mt-2 text-muted">A couple of highlights from my work.</p>
+        </Reveal>
+        <RevealGroup className="mt-6 grid gap-6 md:grid-cols-2">
+          <RevealItem>
+            <CardCapstone />
+          </RevealItem>
+          <RevealItem>
+            <Project
+              title="NeoPal"
+              description="An AI chat web app where you can talk with different AI characters and create your own virtual pal."
+              technologies={["React", "Next.js", "TypeScript", "Groq", "Prisma", "PostgreSQL"]}
+              image={neopal}
+              github="https://github.com/ElijahMonj/ai-chat-app-web"
+              link="https://neopal.vercel.app/"
+              label="Personal Project"
+            />
+          </RevealItem>
+        </RevealGroup>
+        <Reveal className="mt-6">
+          <p className="text-muted">
+            For more, visit my{" "}
+            <Link href="/projects" className={linkClass}>
+              Projects page
+            </Link>
+            .
+          </p>
+        </Reveal>
+      </section>
 
     </div>
   );
 };
 
-export default Resume;
+export default About;

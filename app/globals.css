@@ -1,23 +1,157 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* Class-based dark mode for the manual next-themes toggle (attribute="class"). */
+@custom-variant dark (&:where(.dark, .dark *));
 
-body {
+/* ---------------------------------------------------------------------------
+   Fixed design tokens (emitted to :root so they're usable as utilities AND
+   as var() inside gradients / inline styles).
+--------------------------------------------------------------------------- */
+@theme {
+  --color-accent: #3b82f6;
+  --color-accent-cyan: #22d3ee;
+  --color-accent-blue: #3b82f6;
+  --color-accent-violet: #8b5cf6;
 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-float: float 9s ease-in-out infinite;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* ---------------------------------------------------------------------------
+   Theme-switchable semantic colors. Defaults below are LIGHT; `.dark`
+   overrides them. Bound to utilities via `@theme inline` so bg-background,
+   text-foreground, etc. react to the active theme.
+--------------------------------------------------------------------------- */
+:root {
+  --background: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --foreground: #0f172a;
+  --muted: #4a5568;
+  --border: rgba(15, 23, 42, 0.1);
+  --card: rgba(255, 255, 255, 0.72);
+}
+
+.dark {
+  --background: #060913;
+  --surface: #0c1322;
+  --surface-2: #121b2e;
+  --foreground: #e8edf7;
+  --muted: #93a2bd;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: rgba(255, 255, 255, 0.04);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent-violet) 35%, transparent);
+    color: var(--color-foreground);
+  }
+
+  /* Subtle themed scrollbar (pointer devices) */
+  @media (pointer: fine) {
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-border);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: color-mix(in oklab, var(--color-accent-blue) 50%, var(--color-border));
+    }
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Frosted-glass surface used by cards, header, drawer. */
+@utility glass {
+  background-color: var(--color-card);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--color-border);
+}
+
+/* Cyan -> blue -> violet gradient text. */
+@utility text-gradient {
+  background-image: linear-gradient(
+    110deg,
+    var(--color-accent-cyan),
+    var(--color-accent-blue) 55%,
+    var(--color-accent-violet)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   Keyframes
+--------------------------------------------------------------------------- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -3%, 0) scale(1.06);
+  }
+}
+
+/* Legacy entrance class — kept as a graceful fallback; pages use <Reveal>. */
 @keyframes animateUp {
   from {
     opacity: 0;
@@ -28,7 +162,20 @@ body {
     transform: translateY(0);
   }
 }
-
 .animateUp {
-  animation: animateUp 1s ease-out forwards; /* Duration: 1s, easing: ease-out */
+  animation: animateUp 0.8s ease-out forwards;
+}
+
+/* ---------------------------------------------------------------------------
+   Respect prefers-reduced-motion (motion components also gate via JS).
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

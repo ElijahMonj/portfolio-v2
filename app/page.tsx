@@ -1,52 +1,183 @@
-import Me from '@/public/images/me.jpg';
 import Image from "next/image";
+import Link from "next/link";
+import Me from "@/public/images/me.jpg";
+import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiFirebase, SiPrisma, SiMongodb, SiLaravel, SiExpress, SiVercel } from "react-icons/si";
+import { BiLogoTypescript, BiLogoJavascript, BiLogoPostgresql, BiLogoVuejs, BiLogoPhp } from "react-icons/bi";
+import { FiArrowRight, FiArrowUpRight, FiCode, FiUploadCloud, FiDollarSign, FiRefreshCw } from "react-icons/fi";
+import { Reveal, RevealGroup, RevealItem } from "./Components/motion/Reveal";
+import Marquee from "./Components/Marquee";
+import { SITE, SOCIALS } from "./lib/site";
+import { FaSquareGithub, FaLinkedin, FaSquareFacebook } from "react-icons/fa6";
+
+const TECH = [
+  { label: "React", Icon: FaReact, color: "text-[#61DAFB]" },
+  { label: "Next.js", Icon: SiNextdotjs, color: "text-foreground" },
+  { label: "TypeScript", Icon: BiLogoTypescript, color: "text-[#3178C6]" },
+  { label: "JavaScript", Icon: BiLogoJavascript, color: "text-[#F7DF1E]" },
+  { label: "Node.js", Icon: FaNodeJs, color: "text-[#5FA04E]" },
+  { label: "Tailwind", Icon: SiTailwindcss, color: "text-[#38BDF8]" },
+  { label: "Firebase", Icon: SiFirebase, color: "text-[#FFCA28]" },
+  { label: "Prisma", Icon: SiPrisma, color: "text-foreground" },
+  { label: "PostgreSQL", Icon: BiLogoPostgresql, color: "text-[#4169E1]" },
+  { label: "MongoDB", Icon: SiMongodb, color: "text-[#47A248]" },
+  { label: "Vue.js", Icon: BiLogoVuejs, color: "text-[#42B883]" },
+  { label: "Laravel", Icon: SiLaravel, color: "text-[#FF2D20]" },
+  { label: "PHP", Icon: BiLogoPhp, color: "text-[#777BB4]" },
+  { label: "Express", Icon: SiExpress, color: "text-foreground" },
+  { label: "Vercel", Icon: SiVercel, color: "text-foreground" },
+  { label: "GitHub", Icon: FaGithub, color: "text-foreground" },
+];
+
+const SOCIAL_ICONS = {
+  github: FaSquareGithub,
+  linkedin: FaLinkedin,
+  facebook: FaSquareFacebook,
+} as const;
+
+const SHIP_STEPS = [
+  { Icon: FiCode, title: "Build", desc: "Design and build features across web and mobile with React, Next.js & React Native." },
+  { Icon: FiUploadCloud, title: "Ship", desc: "Release to the App Store & Google Play and deploy web dashboards." },
+  { Icon: FiDollarSign, title: "Monetize", desc: "Wire up subscriptions, in-app purchases (RevenueCat) and AdMob ad mediation." },
+  { Icon: FiRefreshCw, title: "Maintain", desc: "Cloud functions, push notifications, and keeping things stable after launch." },
+];
 
 export default function Home() {
   return (
-    <main className="h-auto my-auto flex flex-col-reverse lg:flex-row md:flex-row items-center justify-between w-full p-6 lg:p-16">
-      {/* Image Section */}
-      <div className="w-full lg:w-1/2 md:w-1/2 flex justify-center">
-        <Image
-          src={Me}
-          alt="me"
-          quality={100}
-          className="mx-auto w-56 lg:w-64 rounded-full lg:p-0 shadow-lg transform transition duration-1000 ease-out scale-0 opacity-0 animate-hero"
-          style={{ objectFit: "contain" }}
-        />
-      </div>
+    <div className="flex flex-col gap-24 py-12 lg:gap-32 lg:py-20">
+      {/* Hero */}
+      <section className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <Reveal className="order-2 lg:order-1">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted">
+            Full Stack Software Engineer
+          </p>
 
-      {/* Text Section */}
-      <div className="w-3/4 py-5 transform transition duration-1000 ease-out translate-y-8 opacity-0 animate-hero">
-        <p className="text-xl lg:text-2xl font-semibold text-gray-800">
-          Hi, I’m <span className="text-dark font-bold">Elijah Monjardin</span> 👋
-        </p>
-        <h1 className="text-3xl lg:text-5xl font-bold text-dark mb-4">
-          A React Developer
-        </h1>
-        <p className="text-lg lg:text-2xl text-gray-600 mb-6">
-          I&apos;m an IT student that is passionate in developing react applications and building projects with others!
-        </p>
-        <blockquote className="italic text-gray-500 border-l-4 border-gray-300 pl-4">
-          &quot;The best way to predict the future is to create it.&quot; – Peter Drucker
-        </blockquote>
-      </div>
-    </main>
-    // <main className="h-auto flex flex-col items-center justify-center w-full p-6 lg:p-16 text-center">
-    //   {/* Text Section */}
-    //   <div className="w-full max-w-3xl py-5 transform transition duration-1000 ease-out translate-y-8 opacity-0 animate-hero">
-    //     <p className="text-xl lg:text-2xl font-semibold text-gray-800">
-    //       Hi, I’m <span className="text-dark font-bold">Elijah Monjardin</span> 👋
-    //     </p>
-    //     <h1 className="text-3xl lg:text-5xl font-bold text-dark mb-4">
-    //       A React Developer
-    //     </h1>
-    //     <p className="text-lg lg:text-2xl text-gray-600 mb-6">
-    //       I&apos;m an IT student passionate about developing React applications and building projects with others!
-    //     </p>
-    //     <blockquote className="italic text-gray-500 border-l-4 border-gray-300 pl-4">
-    //       &quot;The best way to predict the future is to create it.&quot; – Peter Drucker
-    //     </blockquote>
-    //   </div>
-    // </main>
+          <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl">
+            Hi, I&apos;m Elijah —
+            <br />a <span className="text-gradient">Full Stack Engineer</span>
+          </h1>
+
+          <p className="mt-6 max-w-xl text-lg text-muted">
+            I build and ship apps for web and mobile — right now I&apos;m crafting
+            React Native apps people use every day. I love turning rough ideas
+            into real products (and winning the occasional 2am bug hunt).
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              href="/projects"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-violet px-6 py-3 font-medium text-white shadow-lg shadow-accent-blue/20 transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              View Projects
+              <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-medium text-foreground transition-colors duration-300 hover:border-accent-blue/40 hover:text-accent-blue"
+            >
+              About me
+            </Link>
+          </div>
+
+          <div className="mt-8 flex items-center gap-4">
+            {SOCIALS.map((social) => {
+              const Icon = SOCIAL_ICONS[social.key];
+              return (
+                <Link
+                  key={social.key}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="text-foreground/60 transition-colors duration-300 hover:text-accent-blue"
+                >
+                  <Icon size={26} />
+                </Link>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.15} className="order-1 flex justify-center lg:order-2">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-accent-cyan/30 via-accent-blue/20 to-accent-violet/30 blur-2xl" />
+            <div className="relative rounded-full bg-gradient-to-tr from-accent-cyan via-accent-blue to-accent-violet p-[3px]">
+              <Image
+                src={Me}
+                alt="Elijah Monjardin"
+                quality={100}
+                priority
+                className="h-56 w-56 rounded-full object-cover sm:h-72 sm:w-72"
+              />
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* End-to-end / how I ship */}
+      <section>
+        <Reveal className="mb-8 text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted">
+            From idea to shipped
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">
+            I handle the <span className="text-gradient">whole flow</span>
+          </h2>
+        </Reveal>
+        <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {SHIP_STEPS.map(({ Icon, title, desc }) => (
+            <RevealItem key={title}>
+              <div className="glass h-full rounded-2xl p-6">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-tr from-accent-cyan/20 to-accent-violet/20 text-accent-blue">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-bold">{title}</h3>
+                <p className="mt-1.5 text-sm text-muted">{desc}</p>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </section>
+
+      {/* Tech marquee */}
+      <section>
+        <Reveal className="mb-8 text-center">
+          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-muted">
+            Tools &amp; technologies I work with
+          </h2>
+        </Reveal>
+        <Marquee
+          items={TECH.map(({ label, Icon, color }) => (
+            <div
+              key={label}
+              className="glass flex items-center gap-2.5 rounded-full px-5 py-2.5"
+            >
+              <Icon className={`h-5 w-5 ${color}`} />
+              <span className="whitespace-nowrap text-sm font-medium">{label}</span>
+            </div>
+          ))}
+        />
+      </section>
+
+      {/* CTA */}
+      <section>
+        <Reveal className="glass flex flex-col items-center gap-4 rounded-3xl p-10 text-center md:p-14">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl">
+            Let&apos;s work <span className="text-gradient">together</span>
+          </h2>
+          <p className="max-w-md text-muted">
+            Have a project in mind or just want to say hi? My inbox is always
+            open.
+          </p>
+          <Link
+            href={`mailto:${SITE.email}`}
+            className="group mt-2 inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-medium transition-colors duration-300 hover:border-accent-blue/40 hover:text-accent-blue"
+          >
+            Say hello
+            <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </Reveal>
+      </section>
+    </div>
   );
 }

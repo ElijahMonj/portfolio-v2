@@ -1,53 +1,55 @@
 import Image from "next/image";
-import capstone from '@/public/images/projects/capstone/2.jpg'
+import capstone from "@/public/images/projects/capstone/2.jpg";
 import Link from "next/link";
-import { FaArrowUpRightFromSquare, FaGithubAlt } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const CardCapstone = () => {
-    const technologies = ["React Native","Expo","Google Maps","Node.js", "Express", "MongoDB", "EJS","Bootstrap","Socket.io","Semaphore"];
-    return ( 
-        <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col justify-between">
-    
-        <div className="relative rounded-t-lg overflow-hidden">
-            <Image src={capstone} alt="project image" style={{ objectFit: "cover" }} className="rounded-t-lg" />
-            <span className="absolute top-3 select-none left-3 bg-dark text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-                Capstone Project
+  const technologies = ["React Native", "Expo", "Node.js", "Express", "MongoDB", "Socket.io"];
+
+  return (
+    <article className="group glass flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue/40">
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <Image
+          src={capstone}
+          alt="TricyCall preview"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <span className="absolute left-3 top-3 select-none rounded-full bg-black/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
+          Capstone Project
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-display text-xl font-bold">TricyCall: Tricycle Hailing App</h3>
+        <p className="mt-2 flex-1 text-sm text-muted">
+          A tricycle hailing app for both drivers and passengers with an admin
+          panel, built for Tower TODA.
+        </p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              className="select-none rounded-full border border-border px-3 py-1 text-xs font-medium text-foreground/80"
+            >
+              {tech}
             </span>
+          ))}
         </div>
 
-            {/* Tags */}
-            <div className="flex flex-wrap p-4">
-                {technologies.map((tech) => (
-                    <div
-                        className="bg-gray text-dark text-xs font-medium px-3.5 py-1.5 rounded-full m-1 select-none hover:bg-dark hover:text-gray transition duration-500 ease-out"
-                        key={technologies.indexOf(tech)}
-                    >
-                        {tech}
-                    </div>
-                ))}
-            </div>
-
-            {/* Title and Description */}
-            <div className="px-5">
-                <h3 className="text-xl font-bold mb-2">TricyCall: Tricycle Hailing App</h3>
-                <p className="text-gray-600 mb-4"> A tricycle hailing app for both drivers and passengers with admin panel for Tower TODA.</p>
-            </div>
-
-            {/* Links */}
-            <div className="flex justify-center pb-5 gap-4">
-            {/* <Link href={'https://tricycall.online/'} 
-                target="_blank" rel="noopener noreferrer"
-                className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark transition duration-500 ease-out flex justify-center items-center gap-2"
-                aria-label="View Project"
-                >View <FaArrowUpRightFromSquare className="my-auto"/>
-            </Link> */}
-            <Link href={'/projects/capstone'} 
-                className="px-3 py-2 rounded-lg bg-dark text-white hover:bg-darkgray hover:text-dark transition duration-500 ease-out flex justify-center items-center gap-2"
-                aria-label="View Case Study"
-                >View Case Study <FaArrowUpRightFromSquare className="my-auto"/></Link>
-            </div>
+        <div className="mt-5">
+          <Link
+            href="/projects/capstone"
+            aria-label="View TricyCall case study"
+            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-violet px-5 py-2.5 text-sm font-medium text-white transition-transform duration-300 hover:-translate-y-0.5"
+          >
+            View Case Study <FaArrowUpRightFromSquare className="h-3.5 w-3.5" />
+          </Link>
         </div>
-    );
-}
+      </div>
+    </article>
+  );
+};
 
 export default CardCapstone;

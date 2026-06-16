@@ -1,20 +1,36 @@
-
+/**
+ * "EM" monogram. The mark is stroked with the cyan -> violet brand gradient.
+ * Accepts standard SVG props (className for sizing).
+ */
 const Logo = (props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={500}
-    height={500}
-    viewBox="0 0 375 375"
+    viewBox="0 0 64 64"
+    fill="none"
+    role="img"
+    aria-label="Elijah Monjardin logo"
     {...props}
   >
     <defs>
-      <clipPath id="a">
-        <path d="M44.012 6.492H331v362.082H44.012Zm0 0" />
-      </clipPath>
+      <linearGradient id="em-logo-gradient" x1="8" y1="12" x2="56" y2="52" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#22D3EE" />
+        <stop offset="0.55" stopColor="#3B82F6" />
+        <stop offset="1" stopColor="#8B5CF6" />
+      </linearGradient>
     </defs>
-    <g clipPath="url(#a)">
-      <path d="m78.215 325.547 67.539 43.117L286.34 310.04c36.086-15.144 44.64-50.871 44.64-90.078Zm37.246-158.05 170.879-71.09c36.086-15.145 44.64-50.872 44.64-90.075L44.012 126.336v97.828l71.449-29.926ZM61.113 315.038l8.551 5.074 81.16-33.77-8.55-5.437-8.188-5.433-8.55-5.075 65.655-27.535c36.086-15.148 44.637-50.511 44.637-89.715L44.012 233.152v71.016l8.55 5.437Zm0 0" />
+    <g
+      stroke="url(#em-logo-gradient)"
+      strokeWidth={5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* E */}
+      <path d="M27 16H15v32h12" />
+      <path d="M15 32h9" />
+      {/* M */}
+      <path d="M35 48V18l7 13 7-13v30" />
     </g>
   </svg>
-)
-export default Logo
+);
+
+export default Logo;
