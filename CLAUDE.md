@@ -15,7 +15,7 @@ There is no test setup in this project. To type-check without building: `npx tsc
 
 ## What this is
 
-A static personal portfolio for Elijah Monjardin. **Stack:** Next.js 16 (App Router) · React 19 · TypeScript 6 · **Tailwind CSS v4** · `motion` 12 (the renamed framer-motion) · `next-themes`. Deployed to Vercel at `https://elijahmonjardin.tech`. No database/CMS/backend — every page is statically prerendered.
+A static personal portfolio for Elijah Monjardin. **Stack:** Next.js 16 (App Router) · React 19 · TypeScript 6 · **Tailwind CSS v4** · `motion` 12 (the renamed framer-motion) · `next-themes`. Deployed to Vercel at `https://elijahmonjardin.vercel.app`. No database/CMS/backend — every page is statically prerendered.
 
 ## Architecture
 

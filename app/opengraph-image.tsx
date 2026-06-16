@@ -78,7 +78,7 @@ export default function Image() {
           Full Stack Software Engineer
         </div>
         <div style={{ display: "flex", fontSize: 30, color: "#93a2bd", marginTop: 40 }}>
-          elijahmonjardin.tech
+          elijahmonjardin.vercel.app
         </div>
       </div>
     ),

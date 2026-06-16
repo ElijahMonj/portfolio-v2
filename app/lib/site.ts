@@ -3,7 +3,7 @@
 export const SITE = {
   name: "Elijah Monjardin",
   role: "Full Stack Software Engineer",
-  url: "https://elijahmonjardin.tech",
+  url: "https://elijahmonjardin.vercel.app",
   email: "monjardinelijah120@gmail.com",
   resume: "/Elijah-Monjardin-Resume.pdf",
   description:
