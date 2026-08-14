@@ -99,7 +99,8 @@ const SKILL_GROUPS: SkillGroup[] = [
       { Icon: SiExpress, label: "Express.js", color: "text-foreground" },
       { Icon: SiPrisma, label: "Prisma", color: "text-foreground" },
       { Icon: SiFirebase, label: "Firebase", color: "text-[#FFCA28]" },
-      { Icon: SiGooglecloud, label: "Cloud Functions", color: "text-[#4285F4]" },
+      { Icon: SiGooglecloud, label: "Google Cloud", color: "text-[#4285F4]" },
+      { Icon: SiSupabase, label: "Supabase", color: "text-[#3FCF8E]" },
       { Icon: SiLaravel, label: "Laravel", color: "text-[#FF2D20]" },
       { Icon: SiAppwrite, label: "Appwrite", color: "text-[#FD366E]" },
     ],
@@ -117,7 +118,6 @@ const SKILL_GROUPS: SkillGroup[] = [
       { Icon: SiVercel, label: "Vercel", color: "text-foreground" },
       { Icon: FaGithub, label: "GitHub", color: "text-foreground" },
       { Icon: SiClaude, label: "Claude Code", color: "text-[#D97757]" },
-      { Icon: SiSupabase, label: "Supabase", color: "text-[#3FCF8E]" },
     ],
   },
   {
@@ -203,7 +203,7 @@ const About = () => {
         </Reveal>
         <RevealGroup className="mt-6 grid gap-6 md:grid-cols-2">
           {EXPERIENCES.map((exp) => (
-            <RevealItem key={exp.company}>
+            <RevealItem key={exp.company} className={exp.featured ? "md:col-span-2" : undefined}>
               <ExperienceCard exp={exp} />
             </RevealItem>
           ))}

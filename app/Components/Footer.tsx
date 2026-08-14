@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { FaLinkedin, FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
+import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
-import { MdDownload } from "react-icons/md";
 import { SITE, SOCIALS } from "@/app/lib/site";
 import { Reveal } from "./motion/Reveal";
 
 const SOCIAL_ICONS = {
   github: FaSquareGithub,
   linkedin: FaLinkedin,
-  facebook: FaSquareFacebook,
 } as const;
 
 export default function Footer() {
@@ -49,14 +47,6 @@ export default function Footer() {
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-violet px-6 py-3 font-medium text-white shadow-lg shadow-accent-blue/20 transition-transform duration-300 hover:-translate-y-0.5"
             >
               <FiMail className="h-5 w-5" /> Email me
-            </Link>
-            <Link
-              href={SITE.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 font-medium text-foreground transition-colors duration-300 hover:border-accent-blue/40 hover:text-accent-blue"
-            >
-              Resume <MdDownload className="h-5 w-5" />
             </Link>
           </div>
         </Reveal>

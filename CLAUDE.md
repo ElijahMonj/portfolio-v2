@@ -15,12 +15,12 @@ There is no test setup in this project. To type-check without building: `npx tsc
 
 ## What this is
 
-A static personal portfolio for Elijah Monjardin. **Stack:** Next.js 16 (App Router) · React 19 · TypeScript 6 · **Tailwind CSS v4** · `motion` 12 (the renamed framer-motion) · `next-themes`. Deployed to Vercel at `https://elijahmonjardin.tech`. No database/CMS/backend — every page is statically prerendered.
+A static personal portfolio for Elijah Monjardin. **Stack:** Next.js 16 (App Router) · React 19 · TypeScript 6 · **Tailwind CSS v4** · `motion` 12 (the renamed framer-motion) · `next-themes`. Deployed to Vercel at `https://elijahmonjardin.vercel.app`. No database/CMS/backend — every page is statically prerendered.
 
 ## Architecture
 
 - **App Router lives at the repo root in `app/`** (no `src/`). Routes: `/`, `/projects`, `/about`, `/projects/capstone`. Import alias `@/*` → project root.
-- **Content is data-in-code.** Shared content lives in `app/lib/`: `site.ts` (name, URL, email, nav links, social links, `SAME_AS` for schema) and `content.ts` (`EXPERIENCES`). Page-specific data (skills, project cards, capstone copy) is hardcoded in the page/component files. **To change content, edit these files** — there is no data layer.
+- **Content is data-in-code.** Shared content lives in `app/lib/`: `site.ts` (name, URL, email, nav links, social links, `SAME_AS` for schema) and `content.ts` (`EXPERIENCES`). Page-specific data (skills, project cards, capstone copy) is hardcoded in the page/component files. **To change content, edit these files** — there is no data layer. Experience `bullets` (and `note`) support tiny inline markup parsed by `ExperienceCard`: `**term**` emphasizes a technology, `==metric==` renders a headline number in the brand gradient. Optional experience flags: `featured: true` spans both columns of the experience grid, `confidential: true` adds an NDA pill by the company name, and `note` renders a closing line with an "Ask me" mailto link.
 - **Server vs client components:** pages are Server Components. Anything using `motion`, hooks, or `next-themes` is a Client Component (`"use client"`). Keep the boundary thin — wrap only the animated/interactive leaf, not the page.
 
 ## Theming (dark-first, Tailwind v4)

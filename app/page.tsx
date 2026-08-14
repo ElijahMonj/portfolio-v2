@@ -8,7 +8,7 @@ import { FiArrowRight, FiArrowUpRight, FiCode, FiUploadCloud, FiDollarSign, FiRe
 import { Reveal, RevealGroup, RevealItem } from "./Components/motion/Reveal";
 import Marquee from "./Components/Marquee";
 import { SITE, SOCIALS } from "./lib/site";
-import { FaSquareGithub, FaLinkedin, FaSquareFacebook } from "react-icons/fa6";
+import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 
 const TECH = [
   { label: "React", Icon: FaReact, color: "text-[#61DAFB]" },
@@ -32,7 +32,6 @@ const TECH = [
 const SOCIAL_ICONS = {
   github: FaSquareGithub,
   linkedin: FaLinkedin,
-  facebook: FaSquareFacebook,
 } as const;
 
 const SHIP_STEPS = [

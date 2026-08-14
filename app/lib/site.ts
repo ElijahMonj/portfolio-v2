@@ -3,9 +3,8 @@
 export const SITE = {
   name: "Elijah Monjardin",
   role: "Full Stack Software Engineer",
-  url: "https://elijahmonjardin.tech",
+  url: "https://elijahmonjardin.vercel.app",
   email: "monjardinelijah120@gmail.com",
-  resume: "/Elijah-Monjardin-Resume.pdf",
   description:
     "Elijah Monjardin is a full stack software engineer who builds and ships React, React Native, and Next.js apps end to end — from features and backends to app store releases.",
   jobTitle: "Full Stack Software Engineer",
@@ -24,7 +23,6 @@ export const SOCIALS = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/elijah-monjardin/",
   },
-  { key: "facebook", label: "Facebook", href: "https://www.facebook.com/deleon111/" },
 ] as const;
 
 /** URLs for schema.org Person `sameAs`. */
