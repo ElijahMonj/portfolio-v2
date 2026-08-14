@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -11,8 +12,11 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   // Close on route change.
   useEffect(() => setOpen(false), [pathname]);
@@ -33,19 +37,15 @@ export default function MobileMenu() {
     };
   }, [open]);
 
-  return (
-    <div className="lg:hidden">
-      <button
-        type="button"
-        aria-label="Open menu"
-        aria-expanded={open}
-        onClick={() => setOpen(true)}
-        className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground/80 transition-colors hover:text-accent-blue hover:border-accent-blue/40"
-      >
-        <MdMenu className="h-5 w-5" />
-      </button>
-
-      <AnimatePresence>
+  /*
+   * Portaled to <body>: the sticky header this button sits in has its own
+   * backdrop-filter, which makes it a backdrop root *and* the containing block
+   * for fixed-position descendants. Rendered inline, the drawer would sample an
+   * empty backdrop (looking transparent) and position itself against the 4rem
+   * header instead of the viewport.
+   */
+  const drawer = (
+    <AnimatePresence>
         {open && (
           <>
             <motion.div
@@ -68,7 +68,7 @@ export default function MobileMenu() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="glass fixed right-0 top-0 z-50 flex h-full w-80 max-w-[85vw] flex-col p-6 outline-none"
+              className="fixed right-0 top-0 z-50 flex h-full w-80 max-w-[85vw] flex-col border-l border-border bg-surface/95 p-6 outline-none backdrop-blur-xl"
             >
               <div className="flex items-center justify-between">
                 <span className="font-display text-lg font-bold">Menu</span>
@@ -120,7 +120,22 @@ export default function MobileMenu() {
             </motion.div>
           </>
         )}
-      </AnimatePresence>
+    </AnimatePresence>
+  );
+
+  return (
+    <div className="lg:hidden">
+      <button
+        type="button"
+        aria-label="Open menu"
+        aria-expanded={open}
+        onClick={() => setOpen(true)}
+        className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground/80 transition-colors hover:text-accent-blue hover:border-accent-blue/40"
+      >
+        <MdMenu className="h-5 w-5" />
+      </button>
+
+      {mounted && createPortal(drawer, document.body)}
     </div>
   );
 }
