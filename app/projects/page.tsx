@@ -49,7 +49,7 @@ const Projects = () => {
         <SectionHeading eyebrow="Where I've worked" title="Work Experience" />
         <RevealGroup className="grid gap-6 md:grid-cols-2">
           {EXPERIENCES.map((exp) => (
-            <RevealItem key={exp.company}>
+            <RevealItem key={exp.company} className={exp.featured ? "md:col-span-2" : undefined}>
               <ExperienceCard exp={exp} />
             </RevealItem>
           ))}
@@ -68,8 +68,9 @@ const Projects = () => {
       <section>
         <SectionHeading eyebrow="Built for fun" title="Personal Projects" />
         <RevealGroup className="grid gap-6 sm:grid-cols-2">
-          <RevealItem>
+          <RevealItem className="sm:col-span-2">
             <Project
+              wide
               title="NeoPal"
               description="An AI chat web app where you can talk with different AI characters and even create your own virtual pal!"
               technologies={[

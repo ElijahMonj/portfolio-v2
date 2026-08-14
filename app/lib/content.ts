@@ -11,21 +11,31 @@ export type Experience = {
   duration: string;
   bullets: string[];
   stack: string[];
+  /** Highlighted role — its card spans the full width of the experience grid. */
+  featured?: boolean;
+  /** Under NDA — the card shows an "NDA" pill next to the company name. */
+  confidential?: boolean;
+  /** Closing line on the card, paired with an "Ask me" mailto link. */
+  note?: string;
 };
 
 export const EXPERIENCES: Experience[] = [
   {
     role: "Full-Stack React Native Developer",
-    // TODO: replace with the real company name (or keep "Confidential" if under NDA).
     company: "Confidential",
     type: "Full-time",
     duration: "Jun 2026 – Present",
     bullets: [
-      "Develop and maintain a production React Native (Expo) app end to end — from feature work to App Store and Google Play submissions.",
-      "Built monetization with RevenueCat subscriptions & in-app purchases plus AdMob mediation across multiple ad networks.",
-      "Engineered the backend and a Next.js admin dashboard on Firebase — Cloud Functions, Firestore, and push notifications.",
+      "Built and shipped a **React Native (Expo)** app end to end — every feature, the release pipeline, and the **App Store** and **Google Play** submissions — serving ==10,000+ users== in its first month live.",
+      "Own the full **AdMob** stack: ad placements, **mediation** across multiple ad networks, and tuned mediation groups and eCPM floors that grew ad revenue well past the default single-network setup.",
+      "Use **Firebase** to its full extent — **Cloud Functions** keeping sensitive logic, keys, and validation off the client, **App Check** locking down API access, plus **Firestore**, **push notifications**, **Remote Config**, and **Analytics** — with efficient queries and caching keeping cloud costs low as usage scaled.",
+      "Implemented **RevenueCat** subscriptions and **in-app purchases** with region-specific pricing and offerings, entitlements reliably synced back into the app, and hands-on resolution of every customer billing, restore, and purchase issue.",
+      "Keep the backend stable on **Google Cloud** through continuous releases and fixes, versioned data migrations, and limited-time in-app events — plus a **Next.js** admin dashboard that lets the team run all of it without a deploy.",
     ],
-    stack: ["React Native", "Expo", "Firebase", "Cloud Functions", "Next.js", "RevenueCat", "AdMob"],
+    stack: ["React Native", "Expo", "Firebase", "Google Cloud", "Next.js", "RevenueCat", "AdMob"],
+    featured: true,
+    confidential: true,
+    note: "My biggest project so far — happy to tell you more about it.",
   },
   {
     role: "Software Solutions Specialist",
@@ -34,8 +44,8 @@ export const EXPERIENCES: Experience[] = [
     type: "Part-time",
     duration: "May 2025 – Oct 2025",
     bullets: [
-      "Maintained and updated client WordPress sites, fixing bugs and improving reliability.",
-      "Contributed to ongoing client projects, using AI tools like Cursor to speed up delivery.",
+      "Maintained and updated client **WordPress** sites, fixing bugs and improving reliability.",
+      "Contributed to ongoing client projects, using AI tools like **Cursor** to speed up delivery.",
     ],
     stack: ["WordPress", "React", "Next.js", "Cursor"],
   },
@@ -46,8 +56,8 @@ export const EXPERIENCES: Experience[] = [
     type: "Internship",
     duration: "Feb 2025 – May 2025",
     bullets: [
-      "Worked on a Smart Logistics System using Laravel + Vue.js.",
-      "Collaborated with fellow interns to add a registration portal, customizable landing page, improved SEO, and QR code implementation.",
+      "Worked on a Smart Logistics System using **Laravel** + **Vue.js**.",
+      "Collaborated with fellow interns to add a registration portal, customizable landing page, improved **SEO**, and **QR code** implementation.",
     ],
     stack: ["Laravel", "Vue.js", "SEO", "QR Code"],
   },

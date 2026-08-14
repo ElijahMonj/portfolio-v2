@@ -1,6 +1,33 @@
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import type { Experience } from "@/app/lib/content";
+import { SITE } from "@/app/lib/site";
+
+/**
+ * Inline emphasis inside bullet copy: `**term**` lifts a technology out of the
+ * muted body text, `==metric==` renders a headline number in the brand gradient.
+ */
+const EMPHASIS = /(\*\*[^*]+\*\*|==[^=]+==)/g;
+
+function renderBullet(text: string) {
+  return text.split(EMPHASIS).map((part, i) => {
+    if (part.startsWith("**")) {
+      return (
+        <strong key={i} className="font-medium text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("==")) {
+      return (
+        <strong key={i} className="text-gradient whitespace-nowrap font-semibold">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
 
 export default function ExperienceCard({ exp }: { exp: Experience }) {
   return (
@@ -23,7 +50,14 @@ export default function ExperienceCard({ exp }: { exp: Experience }) {
               {exp.company} <FiArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           ) : (
-            <p className="mt-1 text-sm font-medium text-foreground/80">{exp.company}</p>
+            <div className="mt-1 flex flex-wrap items-center gap-2">
+              <p className="text-sm font-medium text-foreground/80">{exp.company}</p>
+              {exp.confidential && (
+                <span className="select-none rounded-full border border-border px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-muted">
+                  NDA
+                </span>
+              )}
+            </div>
           )}
         </div>
         <span className="shrink-0 rounded-full border border-border px-3 py-1 text-xs text-muted">
@@ -35,7 +69,7 @@ export default function ExperienceCard({ exp }: { exp: Experience }) {
         {exp.bullets.map((bullet, i) => (
           <li key={i} className="flex gap-2">
             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet" />
-            {bullet}
+            <span>{renderBullet(bullet)}</span>
           </li>
         ))}
       </ul>
@@ -50,6 +84,18 @@ export default function ExperienceCard({ exp }: { exp: Experience }) {
           </span>
         ))}
       </div>
+
+      {exp.note && (
+        <div className="mt-5 flex flex-col gap-2 border-t border-border pt-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>{renderBullet(exp.note)}</p>
+          <Link
+            href={`mailto:${SITE.email}`}
+            className="inline-flex shrink-0 items-center gap-1 font-medium text-accent-blue hover:underline"
+          >
+            Ask me <FiArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      )}
     </article>
   );
 }
