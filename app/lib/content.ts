@@ -24,7 +24,7 @@ export const EXPERIENCES: Experience[] = [
     role: "Full-Stack React Native Developer",
     company: "Confidential",
     type: "Full-time",
-    duration: "Jun 2026 – Present",
+    duration: "June 2025",
     bullets: [
       "Built and shipped a **React Native (Expo)** app end to end — every feature, the release pipeline, and the **App Store** and **Google Play** submissions — reaching ==100k+ downloads== in less than 1 month.",
       "Own the full **AdMob** stack: ad placements, **mediation** across multiple ad networks, and tuned mediation groups and eCPM floors that grew ad revenue well past the default single-network setup.",
