@@ -26,7 +26,7 @@ export const EXPERIENCES: Experience[] = [
     type: "Full-time",
     duration: "Jun 2026 – Present",
     bullets: [
-      "Built and shipped a **React Native (Expo)** app end to end — every feature, the release pipeline, and the **App Store** and **Google Play** submissions — serving ==10,000+ users== in its first month live.",
+      "Built and shipped a **React Native (Expo)** app end to end — every feature, the release pipeline, and the **App Store** and **Google Play** submissions — reaching ==100k+ downloads== in less than 1 month.",
       "Own the full **AdMob** stack: ad placements, **mediation** across multiple ad networks, and tuned mediation groups and eCPM floors that grew ad revenue well past the default single-network setup.",
       "Use **Firebase** to its full extent — **Cloud Functions** keeping sensitive logic, keys, and validation off the client, **App Check** locking down API access, plus **Firestore**, **push notifications**, **Remote Config**, and **Analytics** — with efficient queries and caching keeping cloud costs low as usage scaled.",
       "Implemented **RevenueCat** subscriptions and **in-app purchases** with region-specific pricing and offerings, entitlements reliably synced back into the app, and hands-on resolution of every customer billing, restore, and purchase issue.",

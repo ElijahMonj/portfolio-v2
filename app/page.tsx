@@ -59,7 +59,7 @@ export default function Home() {
           <p className="mt-6 max-w-xl text-lg text-muted">
             I build and ship apps for web and mobile — right now I&apos;m crafting
             React Native apps people use every day. I love turning rough ideas
-            into real products (and winning the occasional 2am bug hunt).
+            into real products.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
