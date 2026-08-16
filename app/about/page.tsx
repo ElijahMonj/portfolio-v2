@@ -188,8 +188,8 @@ const About = () => {
             </div>
             <p className="mt-5 max-w-xl text-muted">
               A full stack software engineer who builds and ships products across
-              web and mobile. These days I&apos;m deep in React Native — taking
-              apps end to end, from the first commit to the app store and
+              web and mobile. These days I&apos;m deep in React Native, taking
+              apps end to end from the first commit to the app store and
               everything after.
             </p>
           </div>

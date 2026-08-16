@@ -6,7 +6,7 @@ export const SITE = {
   url: "https://elijahmonjardin.vercel.app",
   email: "monjardinelijah120@gmail.com",
   description:
-    "Elijah Monjardin is a full stack software engineer who builds and ships React, React Native, and Next.js apps end to end — from features and backends to app store releases.",
+    "Elijah Monjardin is a full stack software engineer who builds and ships React, React Native, and Next.js apps end to end from features and backends to app store releases.",
   jobTitle: "Full Stack Software Engineer",
   location: "Philippines",
 } as const;

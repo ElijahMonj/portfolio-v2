@@ -37,7 +37,7 @@ const SOCIAL_ICONS = {
 const SHIP_STEPS = [
   { Icon: FiCode, title: "Build", desc: "Design and build features across web and mobile with React, Next.js & React Native." },
   { Icon: FiUploadCloud, title: "Ship", desc: "Release to the App Store & Google Play and deploy web dashboards." },
-  { Icon: FiDollarSign, title: "Monetize", desc: "Wire up subscriptions, in-app purchases (RevenueCat) and AdMob ad mediation." },
+  { Icon: FiDollarSign, title: "Monetize", desc: "Wire up subscriptions, in app purchases and ad monetization." },
   { Icon: FiRefreshCw, title: "Maintain", desc: "Cloud functions, push notifications, and keeping things stable after launch." },
 ];
 
