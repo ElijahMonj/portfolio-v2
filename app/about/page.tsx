@@ -4,49 +4,15 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Me from "@/public/images/me.jpg";
 import neopal from "@/public/images/projects/neopal.png";
-import { FaReact, FaNodeJs, FaBriefcase } from "react-icons/fa";
-import {
-  FaCertificate,
-  FaGraduationCap,
-  FaLaptopCode,
-  FaBootstrap,
-  FaGithub,
-  FaJava,
-  FaLinkedin,
-  FaEnvelope,
-} from "react-icons/fa6";
-import {
-  SiAppwrite,
-  SiExpress,
-  SiFirebase,
-  SiLaravel,
-  SiMongodb,
-  SiNextdotjs,
-  SiPrisma,
-  SiTailwindcss,
-  SiVercel,
-  SiExpo,
-  SiGooglecloud,
-  SiClaude,
-  SiGoogleadmob,
-  SiRevenuecat,
-  SiSupabase,
-} from "react-icons/si";
-import {
-  BiLogoJavascript,
-  BiLogoPhp,
-  BiLogoPostgresql,
-  BiLogoTypescript,
-  BiLogoVuejs,
-} from "react-icons/bi";
-import { TbBrandCSharp, TbBrandReactNative } from "react-icons/tb";
+import { FaBriefcase, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
+import { FaCertificate, FaGraduationCap, FaLaptopCode } from "react-icons/fa6";
 import { IconType } from "react-icons";
 import CardCapstone from "./CardCapstone";
 import Project from "../projects/Project";
 import ExperienceCard from "../Components/ExperienceCard";
 import { Reveal, RevealGroup, RevealItem } from "../Components/motion/Reveal";
 import { EXPERIENCES } from "../lib/content";
-import { SITE } from "../lib/site";
+import { SITE, TECH_STACK, type TechItem } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -61,71 +27,33 @@ export const metadata: Metadata = {
   },
 };
 
-type Skill = { Icon: IconType; label: string; color: string };
+type Skill = TechItem;
 type SkillGroup = { title: string; skills: Skill[] };
 
 const SKILL_GROUPS: SkillGroup[] = [
   {
     title: "Languages",
-    skills: [
-      { Icon: BiLogoJavascript, label: "JavaScript", color: "text-[#F7DF1E]" },
-      { Icon: BiLogoTypescript, label: "TypeScript", color: "text-[#3178C6]" },
-      { Icon: BiLogoPhp, label: "PHP", color: "text-[#777BB4]" },
-    ],
+    skills: TECH_STACK.filter((tech) => ["JavaScript", "TypeScript", "PHP"].includes(tech.label)),
   },
   {
     title: "Frontend",
-    skills: [
-      { Icon: FaReact, label: "React", color: "text-[#61DAFB]" },
-      { Icon: SiNextdotjs, label: "Next.js", color: "text-foreground" },
-      { Icon: SiTailwindcss, label: "Tailwind CSS", color: "text-[#38BDF8]" },
-      { Icon: FaBootstrap, label: "Bootstrap", color: "text-[#7952B3]" },
-      { Icon: BiLogoVuejs, label: "Vue.js", color: "text-[#42B883]" },
-    ],
+    skills: TECH_STACK.filter((tech) => ["React", "Next.js", "Tailwind", "Bootstrap", "Vue.js"].includes(tech.label)),
   },
   {
     title: "Mobile & Monetization",
-    skills: [
-      { Icon: TbBrandReactNative, label: "React Native", color: "text-[#61DAFB]" },
-      { Icon: SiExpo, label: "Expo", color: "text-foreground" },
-      { Icon: SiRevenuecat, label: "RevenueCat", color: "text-[#F2545B]" },
-      { Icon: SiGoogleadmob, label: "AdMob", color: "text-[#4285F4]" },
-    ],
+    skills: TECH_STACK.filter((tech) => ["React Native", "Expo", "RevenueCat", "AdMob"].includes(tech.label)),
   },
   {
     title: "Backend & Cloud",
-    skills: [
-      { Icon: FaNodeJs, label: "Node.js", color: "text-[#5FA04E]" },
-      { Icon: SiExpress, label: "Express.js", color: "text-foreground" },
-      { Icon: SiPrisma, label: "Prisma", color: "text-foreground" },
-      { Icon: SiFirebase, label: "Firebase", color: "text-[#FFCA28]" },
-      { Icon: SiGooglecloud, label: "Google Cloud", color: "text-[#4285F4]" },
-      { Icon: SiSupabase, label: "Supabase", color: "text-[#3FCF8E]" },
-      { Icon: SiLaravel, label: "Laravel", color: "text-[#FF2D20]" },
-      { Icon: SiAppwrite, label: "Appwrite", color: "text-[#FD366E]" },
-    ],
+    skills: TECH_STACK.filter((tech) => ["Node.js", "Express", "Prisma", "Firebase", "Google Cloud", "Supabase", "Laravel", "Appwrite"].includes(tech.label)),
   },
   {
     title: "Databases",
-    skills: [
-      { Icon: SiMongodb, label: "MongoDB", color: "text-[#47A248]" },
-      { Icon: BiLogoPostgresql, label: "PostgreSQL", color: "text-[#4169E1]" },
-    ],
+    skills: TECH_STACK.filter((tech) => ["MongoDB", "PostgreSQL"].includes(tech.label)),
   },
   {
     title: "Tools & Platforms",
-    skills: [
-      { Icon: SiVercel, label: "Vercel", color: "text-foreground" },
-      { Icon: FaGithub, label: "GitHub", color: "text-foreground" },
-      { Icon: SiClaude, label: "Claude Code", color: "text-[#D97757]" },
-    ],
-  },
-  {
-    title: "Also familiar with",
-    skills: [
-      { Icon: FaJava, label: "Java", color: "text-[#E76F00]" },
-      { Icon: TbBrandCSharp, label: "C#", color: "text-[#9B4F96]" },
-    ],
+    skills: TECH_STACK.filter((tech) => ["Vercel", "GitHub"].includes(tech.label)),
   },
 ];
 

@@ -1,33 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Me from "@/public/images/me.jpg";
-import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiFirebase, SiPrisma, SiMongodb, SiLaravel, SiExpress, SiVercel } from "react-icons/si";
-import { BiLogoTypescript, BiLogoJavascript, BiLogoPostgresql, BiLogoVuejs, BiLogoPhp } from "react-icons/bi";
 import { FiArrowRight, FiArrowUpRight, FiCode, FiUploadCloud, FiDollarSign, FiRefreshCw } from "react-icons/fi";
 import { Reveal, RevealGroup, RevealItem } from "./Components/motion/Reveal";
 import Marquee from "./Components/Marquee";
-import { SITE, SOCIALS } from "./lib/site";
+import { SITE, SOCIALS, TECH_STACK } from "./lib/site";
 import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
-
-const TECH = [
-  { label: "React", Icon: FaReact, color: "text-[#61DAFB]" },
-  { label: "Next.js", Icon: SiNextdotjs, color: "text-foreground" },
-  { label: "TypeScript", Icon: BiLogoTypescript, color: "text-[#3178C6]" },
-  { label: "JavaScript", Icon: BiLogoJavascript, color: "text-[#F7DF1E]" },
-  { label: "Node.js", Icon: FaNodeJs, color: "text-[#5FA04E]" },
-  { label: "Tailwind", Icon: SiTailwindcss, color: "text-[#38BDF8]" },
-  { label: "Firebase", Icon: SiFirebase, color: "text-[#FFCA28]" },
-  { label: "Prisma", Icon: SiPrisma, color: "text-foreground" },
-  { label: "PostgreSQL", Icon: BiLogoPostgresql, color: "text-[#4169E1]" },
-  { label: "MongoDB", Icon: SiMongodb, color: "text-[#47A248]" },
-  { label: "Vue.js", Icon: BiLogoVuejs, color: "text-[#42B883]" },
-  { label: "Laravel", Icon: SiLaravel, color: "text-[#FF2D20]" },
-  { label: "PHP", Icon: BiLogoPhp, color: "text-[#777BB4]" },
-  { label: "Express", Icon: SiExpress, color: "text-foreground" },
-  { label: "Vercel", Icon: SiVercel, color: "text-foreground" },
-  { label: "GitHub", Icon: FaGithub, color: "text-foreground" },
-];
 
 const SOCIAL_ICONS = {
   github: FaSquareGithub,
@@ -52,12 +30,12 @@ export default function Home() {
           </p>
 
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl">
-            Hi, I&apos;m Elijah —
+            Hi, I&apos;m Elijah
             <br />a <span className="text-gradient">Full Stack Engineer</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted">
-            I build and ship apps for web and mobile — right now I&apos;m crafting
+            I build and ship apps for web and mobile. Right now I&apos;m crafting
             React Native apps people use every day. I love turning rough ideas
             into real products.
           </p>
@@ -146,7 +124,7 @@ export default function Home() {
           </h2>
         </Reveal>
         <Marquee
-          items={TECH.map(({ label, Icon, color }) => (
+          items={TECH_STACK.map(({ label, Icon, color }) => (
             <div
               key={label}
               className="glass flex items-center gap-2.5 rounded-full px-5 py-2.5"
