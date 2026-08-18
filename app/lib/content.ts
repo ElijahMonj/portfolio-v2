@@ -13,8 +13,6 @@ export type Experience = {
   stack: string[];
   /** Highlighted role — its card spans the full width of the experience grid. */
   featured?: boolean;
-  /** Under NDA — the card shows an "NDA" pill next to the company name. */
-  confidential?: boolean;
   /** Closing line on the card, paired with an "Ask me" mailto link. */
   note?: string;
 };
@@ -34,7 +32,6 @@ export const EXPERIENCES: Experience[] = [
     ],
     stack: ["React Native", "Expo", "Firebase", "Google Cloud", "Next.js", "RevenueCat", "AdMob"],
     featured: true,
-    confidential: true,
     note: "My biggest project so far, happy to tell you more about it.",
   },
   {

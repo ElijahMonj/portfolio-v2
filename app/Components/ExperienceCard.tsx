@@ -50,14 +50,7 @@ export default function ExperienceCard({ exp }: { exp: Experience }) {
               {exp.company} <FiArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           ) : (
-            <div className="mt-1 flex flex-wrap items-center gap-2">
-              <p className="text-sm font-medium text-foreground/80">{exp.company}</p>
-              {exp.confidential && (
-                <span className="select-none rounded-full border border-border px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-muted">
-                  NDA
-                </span>
-              )}
-            </div>
+            <p className="mt-1 text-sm font-medium text-foreground/80">{exp.company}</p>
           )}
         </div>
         <span className="shrink-0 rounded-full border border-border px-3 py-1 text-xs text-muted">
