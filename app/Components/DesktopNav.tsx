@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV_LINKS } from "@/app/lib/site";
+import { NAV_LINKS, SECTION_IDS } from "@/app/lib/site";
+import { useActiveSection } from "./useActiveSection";
 
 export default function DesktopNav() {
   const pathname = usePathname();
+  const activeId = useActiveSection(SECTION_IDS);
 
   return (
     <ul className="flex items-center gap-1">
       {NAV_LINKS.map((link) => {
-        const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+        const active = pathname === "/" && activeId === link.id;
         return (
           <li key={link.href}>
             <Link

@@ -1,33 +1,8 @@
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import { renderBullet } from "./emphasis";
 import type { Experience } from "@/app/lib/content";
 import { SITE } from "@/app/lib/site";
-
-/**
- * Inline emphasis inside bullet copy: `**term**` lifts a technology out of the
- * muted body text, `==metric==` renders a headline number in the brand gradient.
- */
-const EMPHASIS = /(\*\*[^*]+\*\*|==[^=]+==)/g;
-
-function renderBullet(text: string) {
-  return text.split(EMPHASIS).map((part, i) => {
-    if (part.startsWith("**")) {
-      return (
-        <strong key={i} className="font-medium text-foreground">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    if (part.startsWith("==")) {
-      return (
-        <strong key={i} className="text-gradient whitespace-nowrap font-semibold">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return part;
-  });
-}
 
 export default function ExperienceCard({ exp }: { exp: Experience }) {
   return (

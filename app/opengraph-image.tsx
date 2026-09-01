@@ -1,4 +1,25 @@
 import { ImageResponse } from "next/og";
+import { EXPERIENCES } from "./lib/content";
+
+/**
+ * Read from the same figures the page shows, so the share card can never
+ * disagree with the site. content.ts is pure data (pillar icons are string
+ * keys, not react-icons imports), so it is safe inside the next/og runtime.
+ */
+const stats = EXPERIENCES.find((exp) => exp.showcase)?.showcase?.stats ?? [];
+const statLine = stats
+  .slice(0, 2)
+  .map((stat, i) => {
+    const value = stat.value.toLocaleString("en-US", {
+      minimumFractionDigits: stat.decimals ?? 0,
+      maximumFractionDigits: stat.decimals ?? 0,
+    });
+    // No star glyph: satori's built-in font has no U+2605 and renders tofu.
+    return i === 0
+      ? `${value}${stat.suffix ?? ""} ${stat.label} shipped`
+      : `${value}/5 ${stat.label}`;
+  })
+  .join("  ·  ");
 
 export const alt = "Elijah Monjardin — Full Stack Software Engineer";
 export const size = { width: 1200, height: 630 };
@@ -77,7 +98,12 @@ export default function Image() {
         >
           Full Stack Software Engineer
         </div>
-        <div style={{ display: "flex", fontSize: 30, color: "#93a2bd", marginTop: 40 }}>
+        {statLine && (
+          <div style={{ display: "flex", fontSize: 34, color: "#e8edf7", marginTop: 34 }}>
+            {statLine}
+          </div>
+        )}
+        <div style={{ display: "flex", fontSize: 30, color: "#93a2bd", marginTop: 34 }}>
           elijahmonjardin.vercel.app
         </div>
       </div>

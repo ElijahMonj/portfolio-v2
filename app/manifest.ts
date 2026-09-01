@@ -3,7 +3,7 @@ import { SITE } from "./lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Elijah Monjardin — React Developer",
+    name: "Elijah Monjardin — Full Stack Software Engineer",
     short_name: "Elijah Monjardin",
     description: SITE.description,
     start_url: "/",

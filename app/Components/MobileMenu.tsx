@@ -7,13 +7,15 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { MdMenu } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
-import { NAV_LINKS, SOCIALS } from "@/app/lib/site";
+import { NAV_LINKS, SECTION_IDS, SOCIALS } from "@/app/lib/site";
+import { useActiveSection } from "./useActiveSection";
 import ThemeToggle from "./ThemeToggle";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const activeId = useActiveSection(SECTION_IDS);
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => setMounted(true), []);
@@ -84,11 +86,17 @@ export default function MobileMenu() {
 
               <nav className="mt-8 flex flex-col gap-2">
                 {NAV_LINKS.map((link) => {
-                  const active = pathname === link.href;
+                  const active = pathname === "/" && activeId === link.id;
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
+                      /*
+                       * Closing on `pathname` alone is not enough on the
+                       * single-page layout — a hash-only change never updates it,
+                       * so the drawer would stay open over the target section.
+                       */
+                      onClick={() => setOpen(false)}
                       className={`rounded-xl px-4 py-3 text-lg transition-colors ${
                         active
                           ? "text-gradient font-semibold"

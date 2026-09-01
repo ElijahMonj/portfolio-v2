@@ -9,7 +9,21 @@ import image1 from "@/public/images/projects/capstone/1.jpg";
 import image2 from "@/public/images/projects/capstone/2.jpg";
 import image3 from "@/public/images/projects/capstone/3.jpg";
 
-const images = [image1, image2, image3];
+/** Alt text per slide — these are the real contents, not "screen 1 of 3". */
+const images = [
+  {
+    src: image1,
+    alt: "TricyCall passenger app screens: profile settings, in-app chat with a driver, live map booking, a fare breakdown with discounts, OTP sign-in, and travel history.",
+  },
+  {
+    src: image2,
+    alt: "TricyCall feature overview: book with a live map, real-time chat with your driver, OTP-verified sign-in, and a feedback system.",
+  },
+  {
+    src: image3,
+    alt: "TricyCall admin dashboard on laptop and desktop, showing role management, passenger and driver accounts, and the support ticket queue.",
+  },
+];
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
@@ -38,13 +52,12 @@ const Carousel = () => {
             <div className="relative min-w-0 flex-[0_0_100%]" key={index}>
               <div className="relative aspect-video">
                 <Image
-                  src={image}
-                  alt={`TricyCall app screen ${index + 1}`}
+                  src={image.src}
+                  alt={image.alt}
                   fill
                   quality={100}
                   sizes="(max-width: 896px) 100vw, 896px"
                   className="object-cover"
-                  priority={index === 0}
                 />
               </div>
             </div>
