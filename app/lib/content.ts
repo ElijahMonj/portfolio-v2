@@ -62,7 +62,7 @@ export const EXPERIENCES: Experience[] = [
     stack: ["React Native", "Expo", "Firebase", "Google Cloud", "Next.js", "RevenueCat", "AdMob"],
     showcase: {
       marker: "Current role",
-      lead: "Built and shipped end to end.",
+      lead: "Built and shipped an app end to end.",
       stats: [
         {
           value: 100000,
