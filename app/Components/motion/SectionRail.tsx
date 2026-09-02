@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
+import HashLink from "../HashLink";
 import { NAV_LINKS, SECTION_IDS } from "@/app/lib/site";
 import { useActiveSection } from "../useActiveSection";
 
@@ -29,7 +30,7 @@ export default function SectionRail() {
       {SECTION_IDS.map((id) => {
         const isActive = active === id;
         return (
-          <a
+          <HashLink
             key={id}
             href={`/#${id}`}
             aria-label={LABELS[id]}
@@ -46,7 +47,7 @@ export default function SectionRail() {
             <span className="glass pointer-events-none absolute right-full mr-3 select-none whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
               {LABELS[id]}
             </span>
-          </a>
+          </HashLink>
         );
       })}
     </motion.nav>

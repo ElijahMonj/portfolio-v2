@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import HashLink from "./HashLink";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { MdMenu } from "react-icons/md";
@@ -88,7 +88,7 @@ export default function MobileMenu() {
                 {NAV_LINKS.map((link) => {
                   const active = pathname === "/" && activeId === link.id;
                   return (
-                    <Link
+                    <HashLink
                       key={link.href}
                       href={link.href}
                       /*
@@ -104,7 +104,7 @@ export default function MobileMenu() {
                       }`}
                     >
                       {link.label}
-                    </Link>
+                    </HashLink>
                   );
                 })}
               </nav>

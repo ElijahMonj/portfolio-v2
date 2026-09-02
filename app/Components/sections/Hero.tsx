@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HashLink from "../HashLink";
 import Me from "@/public/images/me.jpg";
 import { FiArrowRight } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
@@ -39,19 +40,19 @@ export default function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Link
+          <HashLink
             href="/#work"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-violet px-6 py-3 font-medium text-white shadow-lg shadow-accent-blue/20 transition-transform duration-300 hover:-translate-y-0.5"
           >
             View My Work
             <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          <Link
+          </HashLink>
+          <HashLink
             href="/#contact"
             className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-medium text-foreground transition-colors duration-300 hover:border-accent-blue/40 hover:text-accent-blue"
           >
             Get in touch
-          </Link>
+          </HashLink>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">

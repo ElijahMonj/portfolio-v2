@@ -17,7 +17,7 @@ export default function Work() {
         eyebrow="Where I've Worked"
         title="Work Experience"
         highlight="Experience"
-        lead="A mix of professional experience, academic research, and projects I build for fun."
+        lead="Three roles across full-time, part-time and internship work."
       />
 
       {featured && <AchievementShowcase exp={featured} />}

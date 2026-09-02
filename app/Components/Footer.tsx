@@ -1,4 +1,4 @@
-import Link from "next/link";
+import HashLink from "./HashLink";
 import { NAV_LINKS, SITE } from "@/app/lib/site";
 
 /**
@@ -13,12 +13,12 @@ export default function Footer() {
           <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <Link
+                <HashLink
                   href={link.href}
                   className="text-sm text-muted transition-colors duration-300 hover:text-accent-blue"
                 >
                   {link.label}
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>
