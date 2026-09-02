@@ -24,6 +24,14 @@ export const SITE = {
   url: "https://elijahmonjardin.vercel.app",
   email: "monjardinelijah120@gmail.com",
   /**
+   * Résumé PDF served straight out of `public/`. The file name is versioned
+   * so a new upload never hits a stale CDN copy; `resumeFileName` is what the
+   * visitor actually saves, so the "v2" never reaches their downloads folder.
+   * Bump both together when the PDF is replaced.
+   */
+  resume: "/Elijah-Monjardin-Resume-v2.pdf",
+  resumeFileName: "Elijah-Monjardin-Resume.pdf",
+  /**
    * Feeds <meta description>, og:description, twitter:description and the web
    * manifest — all four read this one string. Keep it under ~155 characters or
    * Google truncates the tail in results.

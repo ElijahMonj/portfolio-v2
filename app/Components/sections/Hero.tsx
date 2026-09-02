@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HashLink from "../HashLink";
 import Me from "@/public/images/me.jpg";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiDownload } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 import { Reveal } from "../motion/Reveal";
 import Section from "./Section";
@@ -47,12 +47,20 @@ export default function Hero() {
             View My Work
             <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </HashLink>
-          <HashLink
-            href="/#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-medium text-foreground transition-colors duration-300 hover:border-accent-blue/40 hover:text-accent-blue"
+          {/*
+            A plain <a>, not next/link: the href is a static asset, not a route,
+            and `download` (same-origin, so it is honored) saves it under the
+            unversioned name rather than opening a tab the visitor has to
+            dismiss. Recruiters look for this first — it stays in the hero.
+          */}
+          <a
+            href={SITE.resume}
+            download={SITE.resumeFileName}
+            className="group inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-medium text-foreground transition-colors duration-300 hover:border-accent-blue/40 hover:text-accent-blue"
           >
-            Get in touch
-          </HashLink>
+            Download Resume
+            <FiDownload className="transition-transform duration-300 group-hover:translate-y-0.5" />
+          </a>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
