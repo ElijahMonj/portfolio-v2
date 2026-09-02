@@ -10,6 +10,8 @@ export type ShowcaseStat = {
   suffix?: string;
   label: string;
   sublabel?: string;
+  /** Icon key, resolved in AchievementShowcase so this file stays pure data. */
+  icon: "downloads" | "rating" | "users";
 };
 
 /** Icon keys are resolved in AchievementShowcase so this file stays pure data. */
@@ -69,19 +71,21 @@ export const EXPERIENCES: Experience[] = [
           suffix: "+",
           label: "downloads",
           sublabel: "in under one month",
+          icon: "downloads",
         },
         {
           value: 4.6,
           decimals: 1,
           label: "store rating",
           sublabel: "from 12.3K reviews",
+          icon: "rating",
         },
         {
-          value: 98.83,
-          decimals: 2,
-          suffix: "%",
-          label: "crash-free sessions",
-          sublabel: "across every release",
+          value: 63000,
+          suffix: "+",
+          label: "active users",
+          sublabel: "every month",
+          icon: "users",
         },
       ],
       pillars: [

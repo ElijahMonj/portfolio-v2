@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { FiArrowUpRight, FiCode, FiDollarSign, FiRefreshCw } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiCode,
+  FiDollarSign,
+  FiDownload,
+  FiRefreshCw,
+  FiStar,
+  FiUsers,
+} from "react-icons/fi";
 import CountUp from "../CountUp";
 import { renderBullet } from "../emphasis";
 import { Reveal } from "../motion/Reveal";
@@ -10,6 +18,21 @@ const PILLAR_ICONS = {
   build: FiCode,
   monetize: FiDollarSign,
   maintain: FiRefreshCw,
+} as const;
+
+/**
+ * Stat icons live here, not in content.ts: that file is imported by
+ * opengraph-image.tsx inside the next/og runtime, which must not pull in
+ * react-icons. Same reason the pillars use string keys.
+ *
+ * Deliberately outline (Fi) rather than a solid star, so all three read as one
+ * set, and sat above the figure rather than beside the label — an inline icon
+ * would push "store rating" past the column width at the sm breakpoint.
+ */
+const STAT_ICONS = {
+  downloads: FiDownload,
+  rating: FiStar,
+  users: FiUsers,
 } as const;
 
 /**
@@ -66,22 +89,31 @@ export default function AchievementShowcase({ exp }: { exp: Experience }) {
 
           {/* Headline figures */}
           <div className="mt-10 grid gap-10 sm:mt-12 sm:grid-cols-3 sm:gap-6">
-            {showcase.stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <CountUp
-                  value={stat.value}
-                  decimals={stat.decimals}
-                  suffix={stat.suffix}
-                  className="text-gradient font-display text-5xl font-bold leading-none sm:text-6xl"
-                />
-                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.15em]">
-                  {stat.label}
-                </p>
-                {stat.sublabel && (
-                  <p className="mt-1 text-sm text-muted">{stat.sublabel}</p>
-                )}
-              </div>
-            ))}
+            {showcase.stats.map((stat) => {
+              const Icon = STAT_ICONS[stat.icon];
+              return (
+                <div
+                  key={stat.label}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="mb-5 grid h-10 w-10 place-items-center rounded-full border border-border bg-foreground/[0.04] text-accent-blue">
+                    <Icon aria-hidden className="h-[18px] w-[18px]" />
+                  </div>
+                  <CountUp
+                    value={stat.value}
+                    decimals={stat.decimals}
+                    suffix={stat.suffix}
+                    className="text-gradient font-display text-5xl font-bold leading-none sm:text-6xl"
+                  />
+                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.15em]">
+                    {stat.label}
+                  </p>
+                  {stat.sublabel && (
+                    <p className="mt-1 text-sm text-muted">{stat.sublabel}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Pillars */}
